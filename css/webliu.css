@@ -243,11 +243,39 @@ input, select {
     height: 100%;
     min-height: 640px;
 }
+
 .container {
-    max-width: 1200px;
+    padding: 0 15px;
     margin: 0 auto;
 }
-
+@media (min-width: 768px) {
+    .container {
+    width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+    width: 1200px;
+    padding: 0;
+    }
+}
+.clearfix, 
+.container:after,
+{
+  clear: both;
+}
+.clearfix:before, 
+.clearfix:after, 
+.container:before, 
+.container:after, {
+  display: table;
+  content: " ";
+}
 
 /*滚动条样式*/
 ::-webkit-scrollbar-thumb {
@@ -265,4 +293,24 @@ input, select {
 }
 ::-webkit-scrollbar-thumb {
     width: 1px;
+}
+
+
+/*=====================
+宽度小于等于768px自适应：Phone
+=====================*/
+@media (max-width: 767px) {
+
+}
+/*=====================
+宽度小于等于991px自适应：Pad
+=====================*/
+@media (max-width: 991px) {
+
+}
+/*=====================
+宽度小于等于1199px自适应：Pc
+=====================*/
+@media (max-width: 1199px) {
+
 }
