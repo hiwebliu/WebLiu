@@ -1,79 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="webliu" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-title" content="<?php echo get_bloginfo('name') ?>">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-<title></title>
-<!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/webliu.css">
-<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="applicable-device" content="pc,mobile"/>
+	<title>首页</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.min.css" />
+	<link rel="stylesheet" href="css/webliu.css">
 </head>
 <body>
-	<header class="header">
+	<!-- header -->
+	<div id="header">
 		<div class="container">
-			<section class="header_logo">
-				<img class="logoimg" src="img/logo.png" alt="">
+			<section class="logo">
+			<a href="#" title="logo标题"></a>
 			</section>
-			<section class="header_search">
-				<i class="fa fa-search"></i>
+			<section class="search_show">
+				<a href="javascript:;" class="">
+					<i class="fa fa-search"></i>
+				</a>
 			</section>
-			<section class="header_menu ispc">
+			<section class="site_nav">
 				<ul>
-					<li><a href="#"><i class="fa fa-home"></i>首页</a></li>
-					<li><a href="#"><i class="fa fa-wordpress"></i>Wordpress相关</a>
-						<ul>
-							<li><a href="#">wordpress主题</a></li>
-							<li><a href="#">wordpress教程</a></li>
-							<li><a href="#">wordpress插件</a></li>
+					<li class="current_menu_item"><a href="#">首页</a></li>
+					<li><a href="#"><i class="fa fa-wordpress"></i> WordPress主题</a></li>
+					<li><a href="#">主题动态</a></li>
+					<li class="menu_item_has_children"><a>其他</a>
+						<ul class="sub_menu">
+							<li><a href="#">博客</a></li>
+							<li><a href="#">留言板</a></li>
+							<li><a href="#">主题推荐</a></li>
+							<li><a href="#">友情链接</a></li>
+							<li><a href="#">归档页面</a></li>
 						</ul>
 					</li>
-					<li><a href="#"><i class="fa fa-html5"></i>前端笔记</a>
-						<ul>
-							<li><a href="#">Html+Css</a></li>
-							<li><a href="#">布局</a></li>
-							<li><a href="#">网站布局</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-lastfm-square"></i>Jquery</a></li>
-					<li><a href="#"><i class="fa fa-info-circle"></i>关于</a></li>
+					<li><a href="#">教程</a></li>
+					<li><a href="#">公告</a></li>
 				</ul>
+			</section>
+			<section id="mobile_nav" class="mobile_nav">
+				<span class="menu_top"></span>
+				<span class="menu_bottom"></span>
 			</section>
 		</div>
-	</header>
-	<section class="phone_menu">
+	</div>
+
+	<!-- Show Me -->
+	<div class="full_screen visual">
+		<div class="visual_content">
+			<!-- <section class="visual_word wow bounceInUp">
+				<h1>WPone Theme</h1>
 				<ul>
-					<li><a href="#"><i class="fa fa-home"></i>首页</a></li>
-					<li><a href="#"><i class="fa fa-wordpress"></i>Wordpress相关</a>
-						<ul>
-							<li><a href="#">wordpress主题</a></li>
-							<li><a href="#">wordpress教程</a></li>
-							<li><a href="#">wordpress插件</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-html5"></i>前端笔记</a>
-						<ul>
-							<li><a href="#">Html+Css</a></li>
-							<li><a href="#">布局</a></li>
-							<li><a href="#">网站布局</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-lastfm-square"></i>Jquery</a></li>
-					<li><a href="#"><i class="fa fa-info-circle"></i>关于</a></li>
+					<li>跨浏览器兼容</li>
+					<li>集成N多插件功能</li>
+					<li>Html5 + Css3响应式布局</li>
+				</ul>
+				<a href="theme_page.html"><i class="fa fa-info-circle"></i>主题详情</a>
+			</section>
+			<section class="visual_img wow bounceInLeft">
+				<a href="#"><img src="img/ipad.png"></a>
+			</section> -->
+		</div>
+	</div>
+
+	<!-- The New Theme -->
+	<div class="new_theme">
+
+			<h1 class=" wow bounceInUp">最新主题</h1>
+			<div class="new_theme_wrapper ">
+
+				<article class="excerpt wow bounceInUp" data-wow-duration="2s">
+					<section class="theme_title">原创主题</section>
+					<section class="theme_thumbail">
+						<img src="img/wpone.png" alt="wpne主题">
+					</section>
+					<section class="theme_info">
+						<h2>WPone主题</h2>
+						<p>WPone主题是由wpztw.com开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求</p>
+					</section>
+					<section class="theme_meta">
+						<span class="price">售价：<em>免费</em></span>
+						<span class="verson">版本：<em>V1.0</em></span>
+						<span class="view"><i class="fa fa-eye"></i>5104</span>
+					</section>
+				</article>
+
+				<article class="excerpt wow bounceInUp" data-wow-duration="2.5s">
+					<section class="theme_title">原创主题</section>
+					<section class="theme_thumbail">
+						<img src="img/wpone.png" alt="wpne主题">
+					</section>
+					<section class="theme_info">
+						<h2>WPone主题</h2>
+						<p>WPone主题是由wpztw.com开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求</p>
+					</section>
+					<section class="theme_meta">
+						<span class="price">售价：<em>188</em></span>
+						<span class="verson">版本：<em>V1.8</em></span>
+						<span class="view"><i class="fa fa-eye"></i>5104</span>
+					</section>
+				</article>
+
+				<article class="excerpt wow bounceInUp" data-wow-duration="3s">
+					<section class="theme_title">原创主题</section>
+					<section class="theme_thumbail">
+						<img src="img/wpone.png" alt="wpne主题">
+					</section>
+					<section class="theme_info">
+						<h2>WPone主题</h2>
+						<p>WPone主题是由wpztw.com开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求</p>
+					</section>
+					<section class="theme_meta">
+						<span class="price">售价：<em>288</em></span>
+						<span class="verson">版本：<em>V2.1</em></span>
+						<span class="view"><i class="fa fa-eye"></i>5104</span>
+					</section>
+				</article>
+
+			</div>
+			<div class="clear"></div>
+	</div>
+
+	<!-- Why Select Us -->
+	<div class="whyus_wrap" style="display:none">
+		<div class="container">
+			<div class="whyus">
+				<section class="mypic wow zoomIn"><img src="img/tx.jpg"></section>
+				<section class="myword">
+					<p class="name  wow slideInUp">暗淡的黑</p>
+					<p class="wow fadeInLeft" data-wow-duration="1s">Web前端工程师，<em>7</em>年设计开发工作，<em>5</em>年Wordpress开发经验，项目开发团队成员超过<em>10</em>位</p>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<!-- The Target -->
+	<div class="target">
+		<div class="container">
+			<h1 class="wow bounceInUp">网站制作 / Wordpress主题定制</h1>
+			<p class="wow bounceInLeft">我们不做收费主题，因为我们始终贯彻<em>开源、免费、共享</em>的原则。</p>
+			<p class="wow bounceInLeft">我们提供主题定制，给您一份只属于您自己的设计。</p>
+			<section class="target_one wow bounceIn" data-wow-duration="2s">
+				<i class="fa fa-pencil-square-o"></i>
+				<h2>Ui设计</h2>
+				<p>我们有多名优秀、具有成熟经验的设计师，可为您打造专属Ui设计。</p>
+				<p class="target_price">998 + 元/套</p>
+				<ul>
+					<li>明确您的设计需求(Logo / 页面设计)</li>
+					<li>提供多种设计方案</li>
+					<li>超长售后期限：1年</li>
+				</ul>
+				<button class="btn btn-danger">了解详情</button>
+			</section>
+			<section class="target_one wow bounceIn"  data-wow-duration="2.5">
+				<i class="fa fa-wordpress"></i>
+				<h2>主题定制</h2>
+				<p>我们有多名优秀、具有成熟经验的设计师，可为您打造专属Ui设计。</p>
+				<p class="target_price">3288 + 元/套</p>
+				<ul>
+					<li>明确您的设计需求(Logo / 页面设计)</li>
+					<li>提供多种设计方案</li>
+					<li>超长售后期限：1年</li>
+				</ul>
+				<button class="btn btn-danger">了解详情</button>
+			</section>
+			<section class="target_one wow bounceIn" data-wow-duration="3s">
+				<i class="fa fa-internet-explorer"></i>
+				<h2>仿站需求</h2>
+				<p>我们有多名优秀、具有成熟经验的设计师，可为您打造专属Ui设计。</p>
+				<p class="target_price">2288 元/套</p>
+				<ul>
+					<li>明确您的设计需求(Logo / 页面设计)</li>
+					<li>提供多种设计方案</li>
+					<li>超长售后期限：1年</li>
+				</ul>
+				<button class="btn btn-danger">了解详情</button>
+			</section>
+		</div> 
+	</div>
+	
+	
+
+	<!-- The Course -->
+	<div class="course_wrap">
+			<section class="course_box wow bounceInLeft">
+				<h3 class="course_title">wordpress功能折腾</h3>
+				<div class="course_content">
+					<header class="course_slogan">坚持不下去，就成了从入门到放弃!</header>
+					<ul>
+						<li>
+							<a class="label" href="#">wordpress教程</a>
+							<i>•</i>
+							<a class="title" href="#">wordpress主题安装时提示缺少style.css样式表</a>
+						</li>
+						<li>
+							<a class="label" href="#">wordpress优化</a>
+							<i>•</i>
+							<a class="title" href="#">纯代码方法压缩wordpress网页代码</a>
+						</li>
+						<li>
+							<a class="label" href="#">wordpress教程</a>
+							<i>•</i>
+							<a class="title" href="#">检测当前页面使用的哪个模板文件的方法</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="course_box wow bounceInRight">
+				<h3 class="course_title">wordpress主题开发教程</h3>
+				<div class="course_content">
+					<header class="course_slogan1">想做一套好主题，就得多去折腾下新玩意!</header> 
+					<ul>
+						<li>
+							<a class="label" href="#">wordpress教程</a>
+							<i>•</i>
+							<a class="title" href="#">wordpress主题安装时提示缺少style.css样式表</a>
+						</li>
+						<li>
+							<a class="label" href="#">wordpress优化</a>
+							<i>•</i>
+							<a class="title" href="#">纯代码方法压缩wordpress网页代码</a>
+						</li>
+						<li>
+							<a class="label" href="#">wordpress教程</a>
+							<i>•</i>
+							<a class="title" href="#">检测当前页面使用的哪个模板文件的方法</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="clear"></section>
+	</div>
+	
+	<!-- MyDream -->
+	<div class="mydream">
+		<div class="container">
+			<section class="think_left">
+				<h1 class="wow fadeInLeft" data-wow-duration="1s">念念不忘，必有回响，有一口气，点一盏灯。</h1>
+				<p class="wow fadeInLeft" data-wow-duration="2s">生活不止眼前的苟且，还有远方的苟活，修身，齐家，平天下，我们平不了天下，但愿我们在编程的路上能够走得足够远。</p>
+			</section>
+			<section class="think_right wow fadeInUp" data-wow-duration="2s">
+				<a href="#">
+					<i class="fa fa-qq"></i>
+					QQ在线咨询
+				</a>
+				<p>上班、看孩，不能及时回复请留言。</p>
+			</section>
+		</div>
+	</div>
+
+	<!-- The Footer -->
+	<footer class="footer">
+		<div class="container">
+			<section class="footer_link wow fadeInUp">
+			<h3 class="links-title"><i class="fa fa-link"></i>友情链接</h3>
+				<ul>
+					<li><a href="#">wordpress主题网</a></li>
+					<li><a href="#">80电影网</a></li>
+					<li><a href="#">暗淡的黑IT网络</a></li>
+					<li><a href="#">wordpress主题网</a></li>
+					<li><a href="#">80电影网</a></li>
+					<li><a href="#">暗淡的黑IT网络</a></li>
+					<li><a href="#">wordpress主题网</a></li>
+					<li><a href="#">80电影网</a></li>
+					<li><a href="#">暗淡的黑IT网络</a></li>
 				</ul>
 			</section>
-	<!-- 顶部结束 -->
-	<!-- 大图开始 -->
-	<div class="full_screen showme" style="background-image:url(img/bg.jpg)">
-		
-	</div>
-	<!-- 大图结束 -->
-	<div style="width:100%;height:3000px;"></div>
+			<section class="clear"></section>
+			<section class="copyright wow fadeInUp">
+				<p>© 2017 All Rights Reserved | Theme by <a href="wpztw.com">wpztw.com</a> | 鲁ICP备13001253号 </p>
+				<p>网站基于 <i class="fa fa-cloud"></i> <a href="#">阿里云服务器</a> | CDN加速：<a href="#">七牛云存储</a></p>
+			</section>
+		</div>
+	</footer>
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/main.js"></script>
+	<div class="gotop">
+		<a id="test"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+	</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/wow.min.js"></script>
 </body>
 </html>
