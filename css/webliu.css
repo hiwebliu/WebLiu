@@ -81,7 +81,6 @@ i {
 }
 #header .logo {
 	float: left;
-	margin-right: 20px;
 }
 #header .logo a {
 	display: inline-block;
@@ -93,7 +92,7 @@ i {
 	height: 38px;
 }
 .hasscroll #header .logo a {
-	background-image: url(../img/logo-dark.png);
+	background-image: url(../img/logo.gif);
 }
 #header .site_nav {
 	float: right;
@@ -259,12 +258,12 @@ i {
     position: absolute;
 }
 .visual_content {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
+	position: relative;
     z-index: 2;
-    padding-top: 5%;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex;
+    margin-top: 120px;
 }
 .visual_img, .visual_word {
 	width: 50%;
@@ -321,7 +320,101 @@ i {
 	color: #fff;
 	border-color: #ed1c24;
 }
+.showme_content {
+	padding: 30px;
+	position: relative;
+}
+.showme_timg img {
+    border-radius: 50%;
+    background: rgba(255,255,255,.4);
+    /*border: 1px solid #ddd;
+    box-shadow: 0px 2px 2px #565656;*/
+    max-width: 150px;
+}
+.trans_around1, .trans_around2 {
+	position: absolute;
+	border: 1px dashed #ccc;
+	border-radius: 100%;
+}
+.trans_around1 {
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+	-webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: forotate;
+	-webkit-animation-duration: 19000ms;
+}
+.trans_around2 {
+	left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+	border: 1px dashed rgba(255,255,255,0.5);
+	-webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: forotate1;
+    -webkit-animation-duration: 8000ms;
+}
+.showme_slogan {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #c5c5c5;
+    max-width: 500px;
+    margin: 10px auto;
+    font-family: "Microsoft JhengHei",sans-serif;
+}
+.showme_sloganT {
+	position: relative;
+	margin-top: 20px;
+}
 
+.showme_slogan h3, .showme_sloganName {
+	font-size: 30px;
+}
+.showme_sloganName {
+	position: absolute;
+	right: 0;
+	margin-top: 40px;
+}
+.showme_slogan h3::before, .showme_slogan h3::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #00f1ff;
+}
+.showme_slogan h3::before {
+	top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+}
+.showme_slogan h3::after {
+	right: 0;
+    bottom: 0;
+    border-width: 0 2px 2px 0;
+    clear: both;
+}
+
+/*旋转动画*/
+@-webkit-keyframes forotate{
+    from{
+        -webkit-transform:rotate(-360deg);
+        opacity: .9;
+       }
+    to{
+        -webkit-transform:rotate(0);
+        opacity: 1;
+        }
+}
+@-webkit-keyframes forotate1{
+    from{
+        -webkit-transform:rotate(0);
+    }
+    to{
+        -webkit-transform:rotate(-180deg);
+    }
+}
 
 /*口号*/
 .solgan {
@@ -343,14 +436,6 @@ i {
 .solgan p {
 	font-size: 18px;
 	color: #999;
-}
-@media screen and (max-width: 768px){
-	.solgan {
-		padding: 10px 0;
-	}
-	.solgan p {
-		display: none;
-	}
 }
 
 /*首页最新主题*/
@@ -431,7 +516,7 @@ i {
     color: #fff;
     padding: 8px 20px;
     /* border-radius: 4px; */
-    z-index: 999;
+    z-index: 100;
     font-size: 14px;
     transform: rotate(45deg);
     -ms-transform:rotate(45deg); /* Internet Explorefr */
@@ -771,8 +856,7 @@ i {
 	position: fixed;
 	right: 2%;
 	bottom: 10%;
-	border: 1px solid #eaeaea;
-	background: #fff;
+	border: 1px solid #777;
 	justify-content: center;
     align-items: center;
     display: -webkit-flex;
@@ -786,16 +870,17 @@ i {
 	-o-transition:background 0.8s;
 	cursor: pointer;
 	display: none;
+	background: rgba(0,0,0,.6);
 }
 .gotop:hover {
-	background: #ed1c24;
+	background: rgba(0,0,0,.9);
 	border-color: #fff;
 }
-.gotop:hover i {
+/*.gotop:hover i {
 	color: #fff;
-}
+}*/
 .gotop i {
-	color: #333;
+	color: #fff;
 	margin: 0;
 	font-size: 24px;
 }
@@ -923,13 +1008,16 @@ i {
 /*=====================
 宽度大于1280时：大屏幕
 =====================*/
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1200px) {
 	.excerpt .theme_title {
 		display: block;
 		width: 30%;
 		top: 10px;
     	right: -32px;
     	font-size: 16px;
+	}
+	.visual {
+		min-height: 650px;
 	}
 }
 /*=====================
@@ -958,8 +1046,8 @@ i {
 		color: #555;
 	}
 	#header .logo a {
-		background-image: url(../img/logo-dark.png);
-		max-width: 170px;
+		background-image: url(../img/logo.gif);
+		max-width: 120px;
 	}
 	.open #header {
 		height: 100%;
@@ -1034,35 +1122,19 @@ i {
 	}
 	.logo {
 		position: absolute;
-		left: 30%;
+		left: 40%;
 		top: 10px;
 		padding-top: 4px;
 	}
-	/*搜索框*/
-	.search_show {
-		margin-top: -8px;
+	.visual_content {
+		margin-top: 50px;
 	}
-	.search_show a {
-		color: #555 !important;
+	.showme_timg img {
+		max-width: 120px;
 	}
-	.site_search_form {
-		padding: 0;
-		margin-top: 20px;
-	}
-	.site_search {
-		top:60px;
-	}
-	.visual_img {
-		float: none;
-		display: block;
-		width: 90%;
-		padding: 0 0 0 10%;
-	}
-	.visual_word {
-		display: block;
-		width: 80%;
-		padding: 0 10% 0 0;
-		margin-bottom: 60px;
+	.visual {
+	    min-height: 620px;
+	    background-attachment: inherit;
 	}
 	.excerpt {
 		width: 30%;
@@ -1090,6 +1162,13 @@ i {
 宽度小于等于768px自适应：Phone
 =====================*/
 @media screen and (max-width: 767px) {
+	.logo {
+		left: 34%;
+	}
+	.visual {
+		height: 520px;
+		background-attachment: inherit;
+	}
 	.excerpt {
 		width: 95%;
 	}
@@ -1152,7 +1231,21 @@ i {
 		padding: 10px 15px;
 		float: left;
 	}
-
+	.solgan {
+		padding: 10px 0;
+	}
+	.solgan p {
+		display: none;
+	}
+	.showme_slogan {
+		max-width: 300px;
+	}
+	.showme_slogan h3 {
+		font-size: 16px;
+	}
+	.showme_sloganName {
+		font-size: 20px;
+	}
 }
 /*=====================
 宽度小于等于600px自适应：小屏手机或者横屏

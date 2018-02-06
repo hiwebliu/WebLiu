@@ -28,19 +28,26 @@ $("#mobile_nav").click(function(){
 
 // 返回顶部
 $(window).scroll(function(){
-		if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
-			$(".gotop").fadeIn();	
-		}
-		else{
-			$(".gotop").hide();
-		}
-	});
-	$(".gotop").click(function(){
-		$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
-	});
+	if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
+		$(".gotop").fadeIn();	
+	}
+	else{
+		$(".gotop").hide();
+	}
+});
+$(".gotop").click(function(){
+	$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
+});
 
-
-
+// wow效果
+var wow = new WOW({
+boxClass: 'wow',
+animateClass: 'animated',
+offset: 20,
+mobile: true,
+live: true
+});
+wow.init();
 
 
 
