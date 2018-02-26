@@ -26,9 +26,9 @@
 			<section class="site_nav">
 				<ul>
 					<li class="current_menu_item"><a href="#">首页</a></li>
-					<li><a href="#"><i class="fa fa-wordpress"></i> WordPress主题</a></li>
-					<li><a href="#">主题动态</a></li>
-					<li class="menu_item_has_children"><a>其他</a>
+					<li><a href="#"><i class="fa fa-wordpress"></i>WordPress相关</a></li>
+					<li><a href="#"><i class="fa fa-html5"></i>前端笔记</a></li>
+					<li class="menu_item_has_children"><a href="#"><i class="fa fa-gitlab"></i>主题制作</a>
 						<ul class="sub_menu">
 							<li><a href="#">博客</a></li>
 							<li><a href="#">留言板</a></li>
@@ -38,7 +38,7 @@
 						</ul>
 					</li>
 					<li><a href="#">教程</a></li>
-					<li><a href="#">公告</a></li>
+					<li><a href="#">关于</a></li>
 				</ul>
 			</section>
 			<section id="mobile_nav" class="mobile_nav">
@@ -85,8 +85,8 @@
 						<img src="img/wpone.png" alt="wpne主题">
 					</section>
 					<section class="theme_info">
-						<h2>WPone主题</h2>
-						<p>WPone主题是由wpztw.com开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求</p>
+						<h2>WebLiu主题</h2>
+						<p>WebLiu主题是由WebLiu.net开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求</p>
 					</section>
 					<section class="theme_meta">
 						<span class="price">售价：<em>免费</em></span>
@@ -289,8 +289,26 @@
 		<a id="test"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 	</div>
 
+	<div class="search_wrap wow">
+		<div class="search_content">
+			<section class="search_form">
+				<form id="NewsSearchForm" name="NewsSearchForm" method="get" action="" target="_blank"> 
+					<input name="q" type="text" value="请输入关键字"> <input type="hidden" name="s">
+					<i class="fa fa-search"></i>
+				</form>
+			</section>
+		</div>
+	</div>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/wow.min.js"></script>
+<script>
+	$(function(){
+		$('.search_show').click(function(){
+			$('.search_wrap').addClass('isshow');
+			$('.search_wrap').addClass('zoomIn');
+		});
+	})
+</script>
 </body>
 </html>
