@@ -2,16 +2,18 @@
 	Name：wpztw2017
 	Author：暗淡的黑
 	Description：wpztw.com网站专业主题
-	主题色调：#45B6F7 蓝色
+	主题色调：
+	#45B6F7 蓝色
 	#ed1c24 红色
+	#555黑色
+	边框颜色：#eee
 */
 
 
-/*顶部导航开始*/
 body{
 	cursor:default;
 	width:100%;
-	height:auto;
+	height:100%;
 	/*font-family:"Open Sans","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Verdana,Tahoma,sans-serif;*/
 	font-family:"Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color:#555;
@@ -109,6 +111,13 @@ i {
 #header .site_nav>ul>li>a {
 	font-size: 18px;
 }
+#header .site_nav>ul>li>a:hover {
+	color: #fff;
+}
+.hasscroll #header .site_nav>ul>li>a:hover {
+	color: #ed1c24;
+}
+
 #header .sub_menu {
     position: absolute;
     left: 50%;
@@ -176,7 +185,7 @@ i {
 	font-size: 15px;
 }
 
-/*自动伸缩搜索框*/
+/* 搜索 */
 .search_show {
 	float: right;
 	margin-top: 10px;
@@ -187,54 +196,6 @@ i {
 .search_show i {
 	font-size: 18px;
 }
-.site_search {
-	background-color: rgba(255,255,255,0.95);
-    position: absolute;
-    top: 85px;
-    left: 0;
-    right: 0;
-    height: 0;
-    z-index: 8;
-    text-align: center;
-    overflow: hidden;
-}
-.site_search_form {
-	padding: 25px 20%;
-    overflow: hidden;
-}
-.search_input {
-	border:0;
-}
-.search_input:focus {
-    border-color: #ed1c24;
-}
-.search_input {
-    float: left;
-    color: #999;
-    border: solid 1px #ddd;
-    width: 85%;
-    height: 50px;
-    padding: 4px 12px;
-    border-right: none;
-    font-size: 16px;
-    border-radius: 2px 0 0 2px;
-    outline: none;
-}
-.search_btn {
-    color: #fff;
-    border: none;
-    background: #ed1c24;
-    height: 50px;
-    font-size: 16px;
-    padding: 0 12px;
-    border-radius: 0 2px 2px 0;
-    width: 15%;
-}
-.search_btn:hover, .search_btn:focus {
-    color: #fff;
-    opacity: 0.85;
-    filter: alpha(opacity=85);
-}
 .search_wrap {
 	position: absolute;
 	display: none;
@@ -242,11 +203,18 @@ i {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 99999;
-	background: #fff;
-	width: 100vw;
-	height: 100vh;
+	z-index: 9999;
+	background: #f8f8f8;
+	width: 100%;
+	height: 0;
 	overflow: hidden;
+}
+.search_title {
+	border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 10px 0;
+    color: #555;
 }
 .search_content {
 	width: 60vw;
@@ -257,11 +225,42 @@ i {
 	width: 100%;
 }
 .search_content .search_form input {
-	width: 100%;
-	border: 0;
-	border-bottom: 1px solid #ccc;
+	width: 85%;
+	border: 1px solid #eee;
+	height: 40px;
+	padding: 20px;
 }
-
+.search_content .search_form button {
+	float: right;
+	width: 15%;
+	height: 42px;
+	border: 1px solid #eee;
+	border-left: 0;
+	border-radius: 0;
+	transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+}
+.search_content .search_form button:hover {
+	background: rgb(0,0,0,.9);
+	color: #fff;
+}
+.search_close {
+	position: absolute;
+	z-index: 9999;
+	top: 10vh;
+	right: 10vw;
+	width: 40px;
+}
+.search_close .fa {
+	font-size: 24px;
+	color: #999;
+	cursor: pointer;
+}
+.search_close .fa:hover {
+	color: #000;
+}
 /*视觉差背景*/
 .visual {
     background-image: url(../img/visualbg.jpg);
@@ -1015,7 +1014,19 @@ i {
 /*==============================================================================================================================
 公用样式
 ==============================================================================================================================*/
-
+input::-moz-placeholder {
+	color: #999 !important;
+}
+input::-webkit-input-placeholder {
+	color: #999 !important;
+}
+input::-ms-input-placeholder {
+	color: #999 !important;
+}
+input:focus {
+	outline: none;
+    box-shadow: none;
+}
 .full_screen {
 	position: relative;
 	width: 100%;
@@ -1286,6 +1297,15 @@ i {
 	.excerpt .theme_title {
 	    top: 10px;
 	    right: -40px;
+	}
+	.search_content {
+		width: 80vw;
+	}
+	.search_content .search_form input {
+		width: 80%;
+	}
+	.search_content .search_form button {
+		width: 20%;;
 	}
 }
 

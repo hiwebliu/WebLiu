@@ -26,6 +26,19 @@ $("#mobile_nav").click(function(){
 	}
 });
 
+// 搜索功能显示、隐藏
+$('.search_show').click(function(){
+	var scrollTop = $(window).scrollTop();
+	$('.search_wrap').addClass('isshow');
+	$('.search_wrap').css('top',scrollTop);
+	$('.search_wrap').animate({height:'100vh'},700);
+	$('body').css('overflow-y','hidden')
+});
+$('.search_close .fa').click(function(){
+	$('.search_wrap').animate({height:'0'},300);
+	$('body').css('overflow-y','auto')
+});
+
 // 返回顶部
 $(window).scroll(function(){
 	if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
@@ -38,6 +51,9 @@ $(window).scroll(function(){
 $(".gotop").click(function(){
 	$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
 });
+
+// 激活Tips效果
+$('[data-toggle="tooltip"]').tooltip();
 
 // wow效果
 var wow = new WOW({

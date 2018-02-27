@@ -20,7 +20,7 @@
 			</section>
 			<section class="search_show">
 				<a href="javascript:;" class="">
-					<i class="fa fa-search"></i>
+					<i class="fa fa-search" data-toggle="tooltip" title="搜索"></i>
 				</a>
 			</section>
 			<section class="site_nav">
@@ -289,26 +289,24 @@
 		<a id="test"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 	</div>
 
-	<div class="search_wrap wow">
+	<!-- The Search -->
+	<div class="search_wrap">
 		<div class="search_content">
+			<section class="search_title">
+				<i class="fa fa-search"></i>少说话，多动手
+			</section>
 			<section class="search_form">
 				<form id="NewsSearchForm" name="NewsSearchForm" method="get" action="" target="_blank"> 
-					<input name="q" type="text" value="请输入关键字"> <input type="hidden" name="s">
-					<i class="fa fa-search"></i>
+					<input name="q" type="text" placeholder="请输入关键字"> <input type="hidden" name="s">
+					<button class="btn btn-default" type="button">搜索</button>
 				</form>
 			</section>
 		</div>
+		<div class="search_close"><i class="fa fa-remove"  data-toggle="tooltip" title="关闭"></i></div>
 	</div>
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/wow.min.js"></script>
-<script>
-	$(function(){
-		$('.search_show').click(function(){
-			$('.search_wrap').addClass('isshow');
-			$('.search_wrap').addClass('zoomIn');
-		});
-	})
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
