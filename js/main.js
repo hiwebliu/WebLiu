@@ -1,20 +1,6 @@
 $(function(){
 	
-var before = $(document).scrollTop();// 滚动前
-if (before > 0) {
-	$(document.body).addClass('hasscroll');
-}
-var pagewidth = $(document).width();
-$(document).scroll(function(){
-	var after = $(document).scrollTop();// 滚动后
-	if (pagewidth > 991) {// pc端才执行特效
-		if (after > 0 ) {
-		$(document.body).addClass('hasscroll');
-		}else {
-			$(document.body).removeClass('hasscroll');
-		}
-	}
-});
+
 
 
 // 手机端显示隐藏导航菜单
@@ -31,11 +17,11 @@ $('.search_show').click(function(){
 	var scrollTop = $(window).scrollTop();
 	$('.search_wrap').addClass('isshow');
 	$('.search_wrap').css('top',scrollTop);
-	$('.search_wrap').animate({height:'100vh'},700);
+	$('.search_wrap').animate({height:'100vh'},500);
 	$('body').css('overflow-y','hidden')
 });
 $('.search_close .fa').click(function(){
-	$('.search_wrap').animate({height:'0'},300);
+	$('.search_wrap').animate({height:'0'},500);
 	$('body').css('overflow-y','auto')
 });
 
