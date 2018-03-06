@@ -1,7 +1,28 @@
 $(function(){
 	
 
-
+// 首页滚动效果
+var before = $(document).scrollTop();// 滚动前
+if (before > 0) {
+	$(document.body).addClass('hasscroll');
+}
+var pagewidth = $(document).width();
+$(document).scroll(function(){
+	var after = $(document).scrollTop();// 滚动后
+	if (pagewidth > 991) {// pc端才执行特效
+		if (after > 0 ) {
+		$(document.body).addClass('hasscroll');
+		}else {
+			$(document.body).removeClass('hasscroll');
+		}
+		// 文章页头部滚动
+		if($(window).scrollTop()>0){
+			$(".header").addClass('shasscroll');
+		}else {
+			$(".header").removeClass('shasscroll');
+		}
+	}
+});	
 
 // 手机端显示隐藏导航菜单
 $("#mobile_nav").click(function(){
