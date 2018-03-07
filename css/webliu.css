@@ -142,13 +142,6 @@ input:focus {
 .webliuicon {
 	
 }
-.webliuicon:before {
-    content: "\e64c";
-    font-size: 40px;
-    color: #e7ecf1;
-    line-height: 40px;
-    overflow: hidden;
-}
 .header {
 	position: relative;
 	top: 0;
@@ -1123,7 +1116,7 @@ input:focus {
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #eee;
-    box-shadow: 2px 2px 4px #eee;
+    /*box-shadow: 2px 2px 4px #eee;*/
 }
 .article_Info h4 {
 	position: absolute;
@@ -1136,6 +1129,11 @@ input:focus {
 .article_Info p span {
 	
 }
+.article_Info ul li {
+	list-style: disc;
+}
+
+
 .breadcrumb {
 	margin: 0;
     padding: 10px 0;
