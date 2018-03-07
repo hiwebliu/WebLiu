@@ -4,7 +4,7 @@
 	Description：webliu.net前端刘的代码人生
 	主题色调：
 	#f7f7f7 body背景色
-	#45B6F7 蓝色
+	#0084ff 蓝色
 	#ed1c24 红色
 	#555555 黑色
 	#eeeeee 边框颜色
@@ -44,7 +44,7 @@ a {
 }
 a:focus, a:hover, 
 .article_left a {
-	color: #45B6F7;
+	color: #0084ff;
 }
 i {
 	margin-right: 4px;
@@ -100,11 +100,55 @@ input:focus {
 	position: relative;
 	height: auto;
 }
-
-
-
-
-
+.webliubtn {
+	color: #555;
+    background: #fff;
+    border: 1px solid #999;
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 8px 14px 8px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 3px;
+    box-shadow: none;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.webliubtn.btnblue {
+	background: #0084ff;
+    border-color: #0084ff;
+    color: #fff;
+}
+.webliubtn.blue {
+	border-color: #0084ff;
+    color: #0084ff;
+}
+.webliubtn.blue:hover {
+	background: #0084ff;
+    color: #fff;
+}
+.webliuicon {
+	
+}
+.webliuicon:before {
+    content: "\e64c";
+    font-size: 40px;
+    color: #e7ecf1;
+    line-height: 40px;
+    overflow: hidden;
+}
 .header {
 	position: relative;
 	top: 0;
@@ -118,7 +162,7 @@ input:focus {
     transition-duration: 400ms;
     transition-property: all;
     transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f6f6f6;
     
 }
 .isindex .header {
@@ -1046,24 +1090,51 @@ input:focus {
 }
 
 /*文章页*/
-.article_title {
+.article_titleWrap {
 	background: #fff;
-	padding: 30px 0;
-	border-top: 1px solid #eee;
-    text-align: center;
+	padding: 30px 0 0;
+	border-top: 1px solid #f6f6f6;
+}
+.article_title {
+	float: left;
+	text-align: justify;
+	padding: 0 0 30px 0;
+	width: calc(100% - 270px);
 }
 .article_title h1 {
     font-size: 24px;
+    line-height: 40px;
 }
 .article_title .meta {
 	margin-top: 20px;
-	color: #999;
+	color: #555;
+	display: none;
 }
 .article_title .meta span {
 	margin-right: 6px;
 }
 .article_title .meta a {
-	color: #999;
+	color: #555;
+}
+.article_Info {
+	position: relative;
+    float: right;
+    width: 260px;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 4px #eee;
+}
+.article_Info h4 {
+	position: absolute;
+	top: -10px;
+	left: 20px;
+}
+.article_Info p {
+	line-height: 24px;
+}
+.article_Info p span {
+	
 }
 .breadcrumb {
 	margin: 0;
@@ -1073,7 +1144,7 @@ input:focus {
     border-radius: 0;
 }
 .breadcrumb a {
-	color: #45B6F7;
+	color: #0084ff;
 }
 .article_wrapper {
 	position: relative;
@@ -1118,7 +1189,7 @@ input:focus {
 .article_content h6 {
     background: #f6f6f6;
     padding: 10px;
-    border-left: 4px solid #45B6F7;
+    border-left: 4px solid #0084ff;
     margin: 10px 0 10px -24px;
 }
 .article_content h1 {
@@ -1130,22 +1201,26 @@ input:focus {
 .article_content h3 {
     font-size: 20px;
 }
-.article-tag {
-    margin: 30px 0 10px;
+.article_tags {
+    margin: 20px 0;
 }
-.article-tag a {
-    border: 1px solid #555;
+.article_tags a {
+	display: inline-block;
+	white-space: nowrap;
+    border: 1px solid #999;
     font-size: 12px;
     padding: 4px 8px;
-    border-radius: 2px;
+    margin-right: 6px;
+    border-radius: 3px;
     color: #555;
 	-webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
 }
-.article-tag a:hover {
-	background: #555;
-	color: #fff;
+.article_tags a:hover {
+	background: #0084ff;
+    color: #fff;
+    border-color: #0084ff;
 }
 
 
@@ -1310,25 +1385,10 @@ input:focus {
 	.visual {
 	    background-attachment: inherit;
 	}
-	.excerpt {
-		width: 95%;
-		margin-left: 2.5%;
-	}
-	.excerpt .theme_title {
-		display: none;
-	}
-	.theme_meta span {
-		margin-right: 10px;
-	}
 	.course_wrap .course_slogan, .course_wrap .course_slogan1 {
 		height: 60px;
 		line-height: 60px;
 		font-size: 16px;
-	}
-	.single_themeleft, .single_right {
-		float: none;
-		width: 90%;
-		padding: 15px 5%;
 	}
 	.wrapper {
 		margin-top: -1px;
@@ -1338,6 +1398,15 @@ input:focus {
 	}
 	.article_content {
 		margin-right: 0;
+	}
+	.article_title {
+		width: 100%;
+	}
+	.article_title .meta {
+		display: block;
+	}
+	.article_Info {
+		display: none;
 	}
 }
 
