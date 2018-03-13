@@ -86,10 +86,11 @@
 				<div class="article_Info">
 					<ul>
 						<h4>Article Information</h4>
-						<li><span>作者</span>：前端刘</li>
-						<li><span>发布</span>：2016-12-7</li>
-						<li><span>浏览</span>：15 次</li>
-						<li><span>分类</span>：<a href="#">wordpress教程</a><a href="#">wordpress加速</a></li>
+						<li><span><i class="fa fa-user-o"></i></span>前端刘</li>
+						<li><span><i class="fa fa-pencil-square-o"></i></span>2016-12-7</li>
+						<li><span><i class="fa fa-eye"></i></span>15 次</li>
+						<li><span><i class="fa fa-comments-o"></i></span>9条</li>
+						<li><span><i class="fa fa-tasks"></i></span><a href="#">wordpress教程</a><a href="#">wordpress加速</a></li>
 					</ul>
 					<!--<h4>Article Information</h4>
 					<p><span>作者</span>：前端刘</p>
@@ -110,66 +111,17 @@
 					
 					<!--文章内容-->
 					<section class="article_item article_content">
-						<p>本来之前WP主题网就想推荐此功能来着，后来发现与本站<a href="#" data-toggle="tooltip" title="wordpress教程：非插件实现wordpress代码高亮：集成prism.js">《wordpress教程：非插件实现wordpress代码高亮：集成prism.js》</a>功能相冲突，便就此搁浅了。之后才发现，其实把我们的高亮代码部分，不进行压缩功能就是了…于是今天推荐给大家。压缩页面html不仅能实现wordpress加速，还能让查找源码的剽窃者们费些功夫。</p>
-						<h3>实现方法</h3>
-						<p>编辑当前wordpress主题的<em>functions.php</em>文件，放入以下代码：</p>
-<pre>
-function wp_compress_html(){
-    function wp_compress_html_main ($buffer){
-        $initial=strlen($buffer);
-        $buffer=explode("", $buffer);
-        $count=count ($buffer);
-        for ($i = 0; $i <= $count; $i++){
-            if (stristr($buffer[$i], ' ')) {
-                $buffer[$i]=(str_replace(" ", " ", $buffer[$i]));
-            } else {
-                $buffer[$i]=(str_replace("\t", " ", $buffer[$i]));
-                $buffer[$i]=(str_replace("\n\n", "\n", $buffer[$i]));
-                $buffer[$i]=(str_replace("\n", "", $buffer[$i]));
-                $buffer[$i]=(str_replace("\r", "", $buffer[$i]));
-                while (stristr($buffer[$i], '  ')) {
-                    $buffer[$i]=(str_replace("  ", " ", $buffer[$i]));
-                }
-            }
-            $buffer_out.=$buffer[$i];
-        }
-    return $buffer_out;
-}
-ob_start("wp_compress_html_main");
-}
-add_action('get_header', 'wp_compress_html');
-</pre>
-						<h3>防止压缩</h3>
-						标题H2也是较为常用的一个样式，请处理好！
-<pre>
-	function unCompress($content) {
-	    if(preg_match_all('/(crayon-|<\/pre>)/i', $content, $matches)) {
-	        $content = ' '.$content;
-	        $content.= ' ';
-	    }
-	    return $content;
-	}
-	add_filter( "the_content", "unCompress");
-</pre>
-						<h3>下面是php代码</h3>
-						<p>因为我们wordpress主题集成的高亮功能是放在标签<em>&lt;pre&gt;</em>之内的，所以我们把标签内的代码禁止压缩即可。</p>
-<pre>
-// 将所有分类（categories）加入数组
-$options_categories = array();
-$options_categories_obj = get_categories();
-foreach ($options_categories_obj as $category) {
-	$options_categories[$category->cat_ID] = $category->cat_name;
-}
-</pre>
 
-<div class="article-tag">
-文章标签：
-	<a href="http://127.0.0.1:2016/wordpress/wordpress%e6%95%99%e7%a8%8b">wordpress教程</a>
-</div>
 					</section>
 					
 					<!--相关文章-->
-					<section class="article_item article-related"></section>
+					<section class="article_item article-related">
+						<h3><i class="fa fa-object-ungroup"></i>相关文章</h3>
+						<ul>
+							<li><a href="#">jquery从入门到放弃</a></li>
+							<li><a href="#">代码实现文章高亮功能</a></li>
+						</ul>
+					</section>
 				</div>
 				
 				<aside class="sidebar">
