@@ -59,6 +59,15 @@ $(".gotop").click(function(){
 	$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
 });
 
+$('.user_sidebar .user_name .fa:eq(0)').addClass('red');
+$('.user_sidebar .user_name .fa:eq(1)').addClass('black');
+$('.user_sidebar .user_name .fa:eq(2)').addClass('blue');
+$('.user_sidebar .user_name .fa:eq(3)').addClass('green');
+
+
+
+
+
 // 激活Tips效果
 $('[data-toggle="tooltip"]').tooltip();
 
