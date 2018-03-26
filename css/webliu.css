@@ -8,7 +8,7 @@
 	#ed1c24 红色
 	#555555 黑色
 	#eeeeee 边框颜色
-	黄黑色调：黄#ffb82c  黑#393631
+	黄黑色调：黄#ffd152  黑#343233
 */
 
 
@@ -48,7 +48,7 @@ a {
 }
 a:focus, a:hover, 
 .article_left a {
-	color: #ffb82c;
+	color: #ffd152;
 }
 i {
 	margin-right: 4px;
@@ -195,7 +195,7 @@ input:focus {
 }
 .header .logo a {
 	display: inline-block;
-	background-image: url(../img/logo.png);
+	/*background-image: url(../img/logo.png);*/
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
@@ -203,11 +203,11 @@ input:focus {
 	height: 38px;
 }
 .isindex .header .logo a {
-	background-image: url(../img/logo.png);
+	/*background-image: url(../img/logo.png);*/
 }
 .isindex.hasscroll .header .logo a, 
 .header.shasscroll .logo a{
-	background-image: url(../img/logo.gif);
+	/*background-image: url(../img/logo.gif);*/
 }
 .header .site_nav {
 	float: right;
@@ -227,7 +227,7 @@ input:focus {
 }
 .header .site_nav>ul>li>a:hover, 
 .isindex.hasscroll .header .site_nav>ul>li>a:hover {
-	color: #ffb82c;
+	color: #ffd152;
 }
 .isindex .header .site_nav>ul>li>a {
 	color: #fff;
@@ -239,7 +239,7 @@ input:focus {
 	font-size: 16px;
 	color: #555;
 }
-.header .sub_menu {
+.header .sub-menu {
     position: absolute;
     left: 50%;
     top: 48px;
@@ -266,7 +266,7 @@ input:focus {
     transform-origin: 40px top;
 }
 @media screen and (min-width: 993px){
-	.header .sub_menu:before {
+	.header .sub-menu:before {
 		content: "";
 	    height: 10px;
 	    width: 10px;
@@ -285,10 +285,10 @@ input:focus {
 	}
 }
 
-.header .menu_item_has_children {
+.header .menu-item-has-children {
 	position: relative;
 }
-.header .menu_item_has_children:hover .sub_menu {
+.header .menu-item-has-children:hover .sub-menu {
 	-webkit-transform: scale3d(1,1,1);
     -moz-transform: scale3d(1,1,1);
     -ms-transform: scale3d(1,1,1);
@@ -296,13 +296,13 @@ input:focus {
     transform: scale3d(1,1,1);
     opacity: 1;
 }
-.header .sub_menu>li {
+.header .sub-menu>li {
 	display: block;
 	padding: 5px 35px;
 	border-bottom: 1px solid #f4f4f4;
 	text-align: left;
 }
-.header .sub_menu>li>a {
+.header .sub-menu>li>a {
 	font-size: 15px;
 }
 
@@ -315,6 +315,9 @@ input:focus {
     padding: 15px 20px;
     color: #fff;
 }
+.hasscroll .search_show a {
+	color: #555;
+}
 .search_show i {
 	font-size: 18px;
 }
@@ -326,7 +329,7 @@ input:focus {
 	left: 0;
 	right: 0;
 	z-index: 9999;
-	background: #f8f8f8;
+	background: #fff;
 	width: 100%;
 	height: 0;
 	overflow: hidden;
@@ -336,7 +339,7 @@ input:focus {
     margin-bottom: 20px;
     font-size: 20px;
     padding: 10px 0;
-    color: #555;
+    color: #999;
 }
 .search_content {
 	width: 60vw;
@@ -348,15 +351,18 @@ input:focus {
 }
 .search_content .search_form input {
 	width: 85%;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	height: 40px;
 	padding: 20px;
+}
+.search_content .search_form input:focus {
+	border-color: #ffd152;
 }
 .search_content .search_form button {
 	float: right;
 	width: 15%;
 	height: 42px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	border-left: 0;
 	border-radius: 0;
 	transition: all .3s ease;
@@ -365,8 +371,9 @@ input:focus {
 	-ms-transition: all .3s ease;
 }
 .search_content .search_form button:hover {
-	background: rgb(0,0,0,.9);
-	color: #fff;
+	background: #ffd152;
+	color: #343233;
+	border-color: #ffd152;
 }
 .search_close {
 	position: absolute;
@@ -400,7 +407,7 @@ input:focus {
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(16, 16, 16, 0.4);
+    background: rgba(16, 16, 16, 0.7);
     z-index: 1;
     position: absolute;
 }
@@ -799,51 +806,6 @@ input:focus {
 	border: 1px solid #ed1c24;
 }
 
-/*首页关于我*/
-.whyus_wrap {
-	width: 100%;
-	/*background: url(../img/new_themebg.jpg) center center no-repeat;*/
-    /*background-size: cover;*/
-    background: #494D57;
-    padding: 50px 0 60px 0;
-    color: #fff;
-}
-.whyus_wrapwhyus_wrap {}
-.whyus_wrap .mypic, 
-.whyus_wrap .myword {
-	text-align: center;
-}
-.whyus_wrap .mypic img {
-	border-radius: 50%;
-}
-.whyus_wrap .myword {
-	padding-top: 20px;
-	color: #fff;
-	font-size: 24px;
-}
-.whyus_wrap .myword p {
-	height: 30px;
-	line-height: 30px;
-}
-.myword .name {
-	font-family: cursive;
-	margin-bottom: 20px;
-	font-size: 30px !important;
-}
-.whyus_wrap .myword em {
-/*	color: #ed1c24;
-	margin: 0 10px;
-	font-size: 35px;
-	font-family: cursive;*/
-	padding: 2px 10px;
-    font-size: 90%;
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 4px;
-    margin: 0 10px;
-    font-style: normal;
-}
-
 /*MyDream*/
 .mydream {
 	width: 100%;
@@ -887,6 +849,7 @@ input:focus {
 .mydream h1 {
 	font-size: 30px;
 	line-height: 40px;
+	color: #cacaca;
 }
 
 /*首页wordpress相关教程*/
@@ -1137,7 +1100,7 @@ input:focus {
 	color: #999;
 }
 .article_title .meta a:hover {
-	color: #ffb82c;
+	color: #ffd152;
 }
 .breadcrumb {
 	margin: 0 0 10px;
@@ -1161,8 +1124,8 @@ input:focus {
 .article_left {
     float: left;
     margin-top: 10px;
-    margin-right: 270px;
-    width: calc(100% - 270px);
+    margin-right: 280px;
+    width: calc(100% - 280px);
 }
 .article_item {
     background-color: #fff;
@@ -1171,6 +1134,7 @@ input:focus {
     color: #555;
     border-radius: 4px;
     border: 1px solid #eaeaea;
+	box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
 }
 .article_item h3 {
 	border-bottom: 1px solid #eee;
@@ -1202,7 +1166,7 @@ input:focus {
 .article_content h6 {
     background: #f6f6f6;
     padding: 10px;
-    border-left: 4px solid #ffb82c;
+    border-left: 4px solid #ffd152;
     margin: 15px 0 15px -24px;
 }
 .article_content h1 {
@@ -1215,7 +1179,8 @@ input:focus {
     font-size: 20px;
 }
 .article_tags {
-    margin: 20px 0;
+    margin: 20px 0 10px;
+    color: #999;
 }
 .article_tags a {
 	display: inline-block;
@@ -1225,7 +1190,7 @@ input:focus {
     padding: 0 8px;
     margin-right: 6px;
     border-radius: 3px;
-    color: #555;
+    color: #999;
 }
 .article_tags a:hover {
 	background: #ffc132;
@@ -1276,7 +1241,7 @@ input:focus {
     height: 120px;
     overflow: hidden;
     border-radius: 50%;
-    margin: 30px 0 15px 0;
+    margin: 15px 0 6px;
 }
 .user_sidebar .user_img a img {
 	width: 100%;
@@ -1284,29 +1249,90 @@ input:focus {
 }
 .user_sidebar .user_name a {
 	font-size: 22px;
-	color: #393631;
+	color: #343233;
 }
 .user_sidebar .user_name .fa {
 	margin: 0;
 	font-size: 16px;
 }
+.user_sidebar .user_introduce {
+    font-size: 12px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px;
+}
+.user_sidebar .user_num {}
+.user_sidebar .postNum, .user_sidebar .comNum {
+	float: left;
+	width: 50%;
+	padding: 10px 0;
+	background: #f8f8f8;
+	border-top: 1px solid #eaeaea;
+}
+.user_sidebar .postNum {
+	border-right: 1px solid #eaeaea;
+}
+.user_sidebar .user_num em {
+	display: block;
+	font-style: normal;
+}
+.user_sidebar .user_num b {
+	display: block;
+}
 
-
-/*=========================================== 广告样式  =========================================== */
-.ads_single img, 
-.ads_articleTop img {
-	max-width: 100%;
+.user_sidebar .user_links {
+	margin-bottom: 10px;
+}
+.user_sidebar .user_links a {
+	text-align: center;
+    background: #999;
+    border-radius: 3px;
+    margin: 0 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.user_sidebar .user_links a i {
+	margin-right: 0;
+}
+.user_links a.social_qq {
+  background-color: #0188fb;
+}
+.user_links a.social_weibo {
+  background-color: #f74864;
+}
+.user_links a.social_qqweibo {
+  background-color: #0e7f9e;
+}
+.user_links a.social_weixin {
+  background-color: #33ad1b;
+  position: relative;
+}
+.user_links a.social_github {
+  background-color: #ff7200;
+}
+.user_links a.social_email {
+  background-color: #36a195;
 }
 
 
 
+/*=========================================== 广告样式  =========================================== */
+.ads_single img, 
+.ad_postTop img, 
+.ads_articleTop img {
+	max-width: 100%;
+	margin-bottom: 10px;
+}
 
 /*==================================================================================================================
 自适应样式
 ====================================================================================================================*/
-
-
-
 
 /*=====================
 宽度大于1280时：大屏幕
@@ -1355,7 +1381,7 @@ input:focus {
 		max-width: 120px;
 	}
 	.isindex .header .logo a {
-		background-image: url(../img/logo.gif);
+		background-image: url(../img/logo.gif) !important;
 	}
 	.open .header {
 		height: 100%;
@@ -1411,7 +1437,7 @@ input:focus {
 		padding: 10px 0;
 	}
 	.open .site_nav {display: block;}
-	.header .sub_menu {
+	.header .sub-menu {
 		transform: none;
 	    transition: none;
 	    opacity: 1;
@@ -1482,14 +1508,10 @@ input:focus {
 		width: 90%;
 		margin-left: 5%;
 	}
-	.whyus_wrap {
-		padding-bottom: 100px;
-	}
-	.whyus_wrap .myword p {
-		font-size: 14px;
-	}
-	.whyus_wrap .myword em {
-		font-size: 14px;
+	.excerpt {
+		float: none;
+	    width: 90%;
+	    margin: 0 auto 20px;
 	}
 	.mydream .think_left, .mydream .think_right {
 		float: none;

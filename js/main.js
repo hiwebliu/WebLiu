@@ -1,5 +1,18 @@
+var logo1 = $('.logo a').css('background-image');
+var logo2 = $('.logoscrool').attr('data-url');
+
+// 页面滚动切换logo效果
+var changeLogo = function() {
+	$('.logopng').addClass('hide');
+	$('.logogif').removeClass('hide');
+}
+var returnLogo = function() {
+	$('.logopng').removeClass('hide');
+	$('.logogif').addClass('hide');
+}
+
+
 $(function(){
-	
 
 // 首页滚动效果
 var before = $(document).scrollTop();// 滚动前
@@ -12,15 +25,21 @@ $(document).scroll(function(){
 	if (pagewidth > 991) {// pc端才执行特效
 		if (after > 0 ) {
 		$(document.body).addClass('hasscroll');
+		changeLogo();		
 		}else {
 			$(document.body).removeClass('hasscroll');
+			returnLogo();
 		}
 		// 文章页头部滚动
 		if($(window).scrollTop()>0){
 			$(".header").addClass('shasscroll');
+			changeLogo();
 		}else {
 			$(".header").removeClass('shasscroll');
+			returnLogo();
 		}
+	}else {
+		changeLogo();
 	}
 });	
 
@@ -65,9 +84,6 @@ $('.user_sidebar .user_name .fa:eq(2)').addClass('blue');
 $('.user_sidebar .user_name .fa:eq(3)').addClass('green');
 
 
-
-
-
 // 激活Tips效果
 $('[data-toggle="tooltip"]').tooltip();
 
@@ -86,6 +102,6 @@ wow.init();
 
 
 
-
 });
+
 
