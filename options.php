@@ -49,7 +49,7 @@ $typography_defaults = array(
 	'face' => 'georgia',
 	'style' => 'bold',
 	'color' => '#bada55' );
-	
+
 // 版式设置选项
 $typography_options = array(
 	'sizes' => array( '6','12','14','16','20' ),
@@ -195,20 +195,219 @@ $options[] = array(
 
 // 首页设置：个人模板
 $options[] = array(
-    'name' => '首页设置',
+    'name' => '焦点大图',
     'type' => 'heading',
 );
 $options[] = array(
-    'name'=>'焦点图设置',
-    'desc'=>'关键字有利于SEO优化，建议个数在5-10之间，用英文逗号隔开',
-    'id'=>'keywords',
-    'std'=>'wpztw.com,WPOne主题',
-    'type'=>"textarea"
+    'name'=>'首页视觉差大图设置',
+    'desc'=>'背景图，尺寸：1920*600以上，建议图片优化，防止首页打开速度过慢.',
+    'id'=>'visualbg',
+		'std'=>''.get_template_directory_uri().'/img/visualbg.jpg',
+    'type'=>"upload"
 );
-
-
-
-
+$options[] = array(
+    'name'=>'描述1',
+    'desc'=>'请输入一段较为装逼的文字',
+    'id'=>'zbword1',
+    'std'=>'想制定更为装逼的Wordpress主题?',
+    'type'=>"text"
+);
+$options[] = array(
+    'name'=>'描述2',
+    'desc'=>'同上',
+    'id'=>'zbword2',
+    'std'=>'请Email Me：HiWebLiu@163.com',
+    'type'=>"text"
+);
+$options[] = array(
+    'name'=>'署名',
+    'desc'=>'大侠尊称',
+    'id'=>'zbword3',
+    'std'=>'--前端刘',
+    'type'=>"text"
+);
+// 收费主题栏目设置
+$options[] = array(
+    'name' => '主题推荐',
+    'type' => 'heading',
+);
+$options[] = array(
+    'name'  => '首页最新主题推荐设置（暂设定三篇）',
+    'desc'  => '启用(每篇填写链接后页面才可显示)',
+    'id'    => "index_paythemes",
+    'type'  => 'checkbox'
+);
+$options[] = array(
+    'desc'=>'标题',
+    'id'=>'paythemes_title',
+    'std'=>'最新主题',
+    'type'=>"text"
+);
+$options[] = array(
+    'name'=>'推荐1图片',
+    'desc'=>'图片尺寸：390 * 340以上',
+    'id'=>'paythemes1_img',
+    'std'=>''.get_template_directory_uri().'/img/webliu.png',
+    'type'=>"upload"
+);
+$options[] = array(
+    'desc'=>'链接',
+    'id'=>'paythemes1_link',
+    'std'=>'http://www.webliu.net',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'标题',
+    'id'=>'paythemes1_title',
+    'std'=>'WebLiu主题',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'文章标签',
+    'id'=>'paythemes1_tag',
+    'std'=>'原创主题',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'描述',
+    'id'=>'paythemes1_info',
+    'std'=>'WebLiu主题是由WebLiu.net开发的一款原创wordpress博客主题，此款主题免费共享，后台功能强大，能满足绝大多数的博客站长需求',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性1',
+    'id'=>'paythemes1_attr1',
+    'std'=>'售价',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值1',
+    'id'=>'paythemes1_data1',
+    'std'=>'免费',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性2',
+    'id'=>'paythemes1_attr2',
+    'std'=>'版本',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值1',
+    'id'=>'paythemes1_data2',
+    'std'=>'V1.0',
+    'type'=>"text"
+);
+$options[] = array(
+    'name'=>'推荐2图片',
+    'desc'=>'图片尺寸：390 * 340以上',
+    'id'=>'paythemes2_img',
+    'std'=>'',
+    'type'=>"upload"
+);
+$options[] = array(
+    'desc'=>'链接',
+    'id'=>'paythemes2_link',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'标题',
+    'id'=>'paythemes2_title',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'文章标签',
+    'id'=>'paythemes2_tag',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'描述',
+    'id'=>'paythemes2_info',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性1',
+    'id'=>'paythemes2_attr1',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值1',
+    'id'=>'paythemes2_data1',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性2',
+    'id'=>'paythemes2_attr2',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值2',
+    'id'=>'paythemes2_data2',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'name'=>'推荐3图片',
+    'desc'=>'图片尺寸：390 * 340以上',
+    'id'=>'paythemes3_img',
+    'std'=>'',
+    'type'=>"upload"
+);
+$options[] = array(
+    'desc'=>'链接',
+    'id'=>'paythemes3_link',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'标题',
+    'id'=>'paythemes3_title',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'文章标签',
+    'id'=>'paythemes3_tag',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'描述',
+    'id'=>'paythemes3_info',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性1',
+    'id'=>'paythemes3_attr1',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值1',
+    'id'=>'paythemes3_data1',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'属性2',
+    'id'=>'paythemes3_attr2',
+    'std'=>'',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'值2',
+    'id'=>'paythemes3_data2',
+    'std'=>'',
+    'type'=>"text"
+);
 
 
 // SEO设置
@@ -401,7 +600,7 @@ $options[] = array(
     'type'  => 'textarea',
     'std'   => '本文由WP主题网出品,如未注明,均为原创,转载请注明<a href="{{link}}" target="_blank" title="{{title}}">{{title}}</a>！'
 );
-// 评论设置  
+// 评论设置
 $options[] = array(
     'name' => '评论设置',
     'type' => 'heading'
@@ -430,7 +629,7 @@ $options[] = array(
 );
 
 
-// 首页轮播  
+// 首页轮播
 $options[] = array(
     'name' => '首页轮播',
     'type' => 'heading'
@@ -530,7 +729,7 @@ $options[] = array(
     'std'=>'',
     'type'=>"text"
 );
-// 站长信息设置开始  
+// 站长信息设置开始
 $options[] = array(
     'name' => '站长信息',
     'type' => 'heading'

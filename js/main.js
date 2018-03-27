@@ -25,7 +25,7 @@ $(document).scroll(function(){
 	if (pagewidth > 991) {// pc端才执行特效
 		if (after > 0 ) {
 		$(document.body).addClass('hasscroll');
-		changeLogo();		
+		changeLogo();
 		}else {
 			$(document.body).removeClass('hasscroll');
 			returnLogo();
@@ -41,7 +41,7 @@ $(document).scroll(function(){
 	}else {
 		changeLogo();
 	}
-});	
+});
 
 // 手机端显示隐藏导航菜单
 $("#mobile_nav").click(function(){
@@ -58,17 +58,17 @@ $('.search_show').click(function(){
 	$('.search_wrap').addClass('isshow');
 	$('.search_wrap').css('top',scrollTop);
 	$('.search_wrap').animate({height:'100vh'},500);
-	$('body').css('overflow-y','hidden')
+	$('body').css('overflow-y','hidden');
 });
 $('.search_close .fa').click(function(){
 	$('.search_wrap').animate({height:'0'},500);
-	$('body').css('overflow-y','auto')
+	$('body').css('overflow-y','auto');
 });
 
 // 返回顶部
 $(window).scroll(function(){
 	if($(window).scrollTop()>100){  //距顶部多少像素时，出现返回顶部按钮
-		$(".gotop").fadeIn();	
+		$(".gotop").fadeIn();
 	}
 	else{
 		$(".gotop").hide();
@@ -103,5 +103,3 @@ wow.init();
 
 
 });
-
-
