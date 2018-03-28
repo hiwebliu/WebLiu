@@ -6,7 +6,7 @@
 		<div class="showme_content wow bounceInUp">
 			<img class="trans_around1" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
 			<img class="trans_around2" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
-			<img class="showme_timg" src="<?php echo webliu_option('social_img'); ?>;" title="风骚人物-前端刘" alt="风骚人物-前端刘" />
+			<img class="showme_timg" src="<?php echo webliu_option('social_img'); ?>"/>
 		</div>
 	</section>
 
@@ -76,34 +76,47 @@
 
 <!-- The Course -->
 <div class="course_wrap">
-		<section class="course_box wow bounceInLeft">
-			<h3 class="course_title">wordpress功能折腾</h3>
+		<section class="course_box">
 			<div class="course_content">
-				<header class="course_slogan">坚持不下去，就成了从入门到放弃!</header>
-				<ul>
-					<li>
-						<a class="label" href="#">wordpress教程</a>
-						<i>•</i>
-						<a class="title" href="#">wordpress主题安装时提示缺少style.css样式表</a>
-					</li>
-					<li>
-						<a class="label" href="#">wordpress优化</a>
-						<i>•</i>
-						<a class="title" href="#">纯代码方法压缩wordpress网页代码</a>
-					</li>
-					<li>
-						<a class="label" href="#">wordpress教程</a>
-						<i>•</i>
-						<a class="title" href="#">检测当前页面使用的哪个模板文件的方法</a>
-					</li>
+				<header class="course_slogan">
+					<i class="fa fa-code"></i>
+					<?php echo get_cat_name(5); ?>
+				</header>
+
+				<?php $posts = get_posts( "category=10&numberposts=10" ); ?>
+				<?php if( $posts ) : ?>
+				<ul><?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<li class="wow fadeInLeft">
+				<a href="<?php the_permalink() ?>" rel="bookmark"  data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
+				<?php if (function_exists('wpjam_has_post_thumbnail') && wpjam_has_post_thumbnail()) { ?>
+				<div class="coursePost_img">
+					<?php wpjam_post_thumbnail(array(110,80),$crop=1);?>
+				</div>
+				<?php }else{ ?>
+				<div class="coursePost_img">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=80&w=110&zc=1"/>
+				</div>
+				<?php } ?>
+				<h1 class="coursePost_title"><?php the_title_attribute(); ?></h1>
+				<div class="coursePost_info">
+					<span><i class="fa fa-clock-o"></i><?php echo the_time('Y-n-j'); ?></span>
+					<span><?php echo post_views('', '次'); ?></span>
+					<span><?php echo the_time('Y-n-j'); ?></span>
+				</div>
+				</a>
+				</li>
+				<?php endforeach; ?>
 				</ul>
+				<?php endif; ?>
+
+
 			</div>
 		</section>
-
-		<section class="course_box wow bounceInRight">
-			<h3 class="course_title">wordpress主题开发教程</h3>
+		<section class="course_box wow bounceInLeft">
 			<div class="course_content">
-				<header class="course_slogan1">想做一套好主题，就得多去折腾下新玩意!</header>
+				<header class="course_slogan">
+					<?php echo get_cat_name(10); ?>
+				</header>
 				<ul>
 					<li>
 						<a class="label" href="#">wordpress教程</a>
