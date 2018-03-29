@@ -107,7 +107,7 @@ input:focus {
 	height: auto;
 }
 .webliubtn {
-	color: #555;
+		color: #555;
     background: #fff;
     border: 1px solid #999;
     display: inline-block;
@@ -569,9 +569,8 @@ input:focus {
 	font-weight: lighter;
 }
 .showme_sloganName {
-	position: absolute;
-	right: 0;
 	margin-top: 40px;
+	text-align: right;
 }
 .showme_slogan h3::before, .showme_slogan h3::after {
     content: '';
@@ -591,7 +590,29 @@ input:focus {
     border-width: 0 2px 2px 0;
     clear: both;
 }
-
+.showme_btns {
+	position: relative;
+	z-index: 3;
+	text-align: center;
+	margin: 20px auto 0;
+}
+.showme_btns a {
+	border: 1px solid #fff;
+	padding: 14px 30px;
+	color: #fff;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 0 15px;
+	background: rgba(255,255,255,.1);
+	-moz-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+		-webkit-transition: all 0.6s ease-in-out;
+		transition: all 0.6s ease-in-out;
+}
+.showme_btns a:hover {
+	background: #fff;
+	color: #555;
+}
 /*口号*/
 .solgan {
 	font-family: "微软雅黑";
@@ -635,7 +656,8 @@ input:focus {
     margin: 40px 0 50px;
     text-align: center;
 }
-.new_theme h1:before, .new_theme h1:after {
+.new_theme h1:before, .new_theme h1:after,
+.target h1:before, .target h1:after {
 	position: absolute;
     top: 15px;
     content: '';
@@ -644,10 +666,10 @@ input:focus {
     background: #ccc;
     display: inline-block;
 }
-.new_theme h1:before {
+.new_theme h1:before, .target h1:before {
 	left: -70px;
 }
-.new_theme h1:after {
+.new_theme h1:after, .target h1:before {
 	right: -70px;
 }
 
@@ -747,6 +769,7 @@ input:focus {
 .target {
 	background-color: #fff;
 	padding: 70px 0;
+	text-align: center;
 }
 .target h1,
 .target h2,
@@ -755,6 +778,8 @@ input:focus {
 	text-align: center;
 }
 .target h1 {
+	position: relative;
+	display: inline-block;
 	font-size: 30px;
 	color: #333;
 	margin-bottom: 50px;
@@ -810,7 +835,7 @@ input:focus {
 }
 .mydream .think_left {
 	float: left;
-	width: 60%;
+	width: 70%;
 	padding-right: 40px;
 }
 .mydream p {
@@ -821,7 +846,7 @@ input:focus {
 }
 .mydream .think_right {
 	float: right;
-	width: 40%;
+	width: 30%;
 	text-align: center;
 }
 .mydream .think_right a {
@@ -888,6 +913,7 @@ input:focus {
     line-height: 20px;
 }
 .course_wrap li {
+	position: relative;
 	padding: 10px 20px;
 	width: 100%;
 	border-bottom: 1px solid #f4f4f4;
@@ -898,13 +924,24 @@ input:focus {
 .course_wrap .coursePost_img {
 	float: left;
 }
-.course_wrap .coursePost_title {
+.coursePost_title {
 	width: calc(100% - 120px);
-	margin-left: 120px;
-	font-size: 18px;
-	line-height: 24px;
-	max-height: 46px;
-	overflow: hidden;
+  margin-left: 120px;
+  font-size: 18px;
+  line-height: 26px;
+  max-height: 50px;
+  overflow: hidden;
+}
+.coursePost_info {
+	position: absolute;
+	width: calc(100% - 120px);
+	padding-left: 120px;
+	font-size: 12px;
+	color: #999;
+	bottom: 10px;
+}
+.coursePost_info span {
+	margin-right: 6px;
 }
 .course_wrap li::after {
     content: '\0020';
@@ -913,14 +950,16 @@ input:focus {
     clear: both;
     visibility: hidden;
 }
+.course_wrap li a {
+	display: block;
+	width: 100%;
+}
 .course_wrap li:hover {
 	background: #f4f7f9;
-	padding-left: 10px;
 }
-.course_wrap li:hover .coursePost_title {
-	color: #ed1c24;
+.course_wrap li:hover a {
+	margin-left: -10px;
 }
-
 /*首页友情链接*/
 .links {
   width: 100%;

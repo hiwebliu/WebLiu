@@ -2,15 +2,15 @@
 
 <!-- Show Me -->
 <div class="full_screen visual" style="background:url(<?php echo webliu_option('visualbg'); ?>;)">
-	<section class="visual_content">
-		<div class="showme_content wow bounceInUp">
+	<section class="visual_content hide">
+		<div class="showme_content wow bounceIn">
 			<img class="trans_around1" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
 			<img class="trans_around2" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
 			<img class="showme_timg" src="<?php echo webliu_option('social_img'); ?>"/>
 		</div>
 	</section>
 
-	<section class="showme_slogan">
+	<section class="showme_slogan hide">
 		<div class="showme_sloganT wow bounceInLeft" data-wow-duration="3s">
 			<h3><?php echo webliu_option('zbword1'); ?></h3>
 		</div>
@@ -20,6 +20,10 @@
 		<div class="showme_sloganName wow bounceInUp" data-wow-duration="5s">
 			<?php echo webliu_option('zbword3'); ?>
 		</div>
+	</section>
+
+	<section class="showme_btns hide">
+		<?php echo webliu_option('visualbts'); ?>
 	</section>
 </div>
 
@@ -72,22 +76,25 @@
 	</div>
 </div>
 
-
-
 <!-- The Course -->
 <div class="course_wrap">
-		<section class="course_box">
+		<section class="course_box leftItem">
 			<div class="course_content">
 				<header class="course_slogan">
 					<i class="fa fa-code"></i>
-					<?php echo get_cat_name(5); ?>
+					<?php
+						$catleftid = webliu_option('course_catleft');
+						$catnum = webliu_option('course_catnum');
+						echo get_cat_name( $catleftid );
+					?>
 				</header>
-
-				<?php $posts = get_posts( "category=10&numberposts=10" ); ?>
-				<?php if( $posts ) : ?>
-				<ul><?php foreach( $posts as $post ) : setup_postdata( $post ); ?>
+				<ul>
+				<?php
+					query_posts( array( 'cat'=>$catleftid, 'posts_per_page'=>$catnum, 'ignore_sticky_posts'=>true ) );
+					while( have_posts() ): the_post();
+				?>
 				<li class="wow fadeInLeft">
-				<a href="<?php the_permalink() ?>" rel="bookmark"  data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
+				<a <?php echo post_blank(); ?> href="<?php the_permalink() ?>" rel="bookmark"  data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
 				<?php if (function_exists('wpjam_has_post_thumbnail') && wpjam_has_post_thumbnail()) { ?>
 				<div class="coursePost_img">
 					<?php wpjam_post_thumbnail(array(110,80),$crop=1);?>
@@ -99,40 +106,49 @@
 				<?php } ?>
 				<h1 class="coursePost_title"><?php the_title_attribute(); ?></h1>
 				<div class="coursePost_info">
-					<span><i class="fa fa-clock-o"></i><?php echo the_time('Y-n-j'); ?></span>
-					<span><?php echo post_views('', '次'); ?></span>
-					<span><?php echo the_time('Y-n-j'); ?></span>
+					<span><?php echo the_time('Y.n.j'); ?></span>
+					<span><?php echo post_views('', '(view)'); ?></span>
 				</div>
 				</a>
 				</li>
-				<?php endforeach; ?>
+				<?php endwhile; wp_reset_query(); ?>
 				</ul>
-				<?php endif; ?>
-
-
 			</div>
 		</section>
-		<section class="course_box wow bounceInLeft">
+		<section class="course_box rightItem">
 			<div class="course_content">
 				<header class="course_slogan">
-					<?php echo get_cat_name(10); ?>
+					<i class="fa fa-th-list"></i>
+					<?php
+						$catrightid = webliu_option('course_catright');
+						$catnum = webliu_option('course_catnum');
+						echo get_cat_name( $catrightid );
+					?>
 				</header>
 				<ul>
-					<li>
-						<a class="label" href="#">wordpress教程</a>
-						<i>•</i>
-						<a class="title" href="#">wordpress主题安装时提示缺少style.css样式表</a>
-					</li>
-					<li>
-						<a class="label" href="#">wordpress优化</a>
-						<i>•</i>
-						<a class="title" href="#">纯代码方法压缩wordpress网页代码</a>
-					</li>
-					<li>
-						<a class="label" href="#">wordpress教程</a>
-						<i>•</i>
-						<a class="title" href="#">检测当前页面使用的哪个模板文件的方法</a>
-					</li>
+				<?php
+					query_posts( array( 'cat'=>$catrightid, 'posts_per_page'=>$catnum, 'ignore_sticky_posts'=>true ) );
+					while( have_posts() ): the_post();
+				?>
+				<li class="wow fadeInRight" data-wow-delay="0.5s">
+				<a <?php echo post_blank(); ?> href="<?php the_permalink() ?>" rel="bookmark"  data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
+				<?php if (function_exists('wpjam_has_post_thumbnail') && wpjam_has_post_thumbnail()) { ?>
+				<div class="coursePost_img">
+					<?php wpjam_post_thumbnail(array(110,80),$crop=1);?>
+				</div>
+				<?php }else{ ?>
+				<div class="coursePost_img">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/timthumb.php?src=<?php echo post_thumbnail_src(); ?>&h=80&w=110&zc=1"/>
+				</div>
+				<?php } ?>
+				<h1 class="coursePost_title"><?php the_title_attribute(); ?></h1>
+				<div class="coursePost_info">
+					<span><?php echo the_time('Y.n.j'); ?></span>
+					<span><?php echo post_views('', '(view)'); ?></span>
+				</div>
+				</a>
+				</li>
+				<?php endwhile; wp_reset_query(); ?>
 				</ul>
 			</div>
 		</section>
@@ -143,15 +159,21 @@
 <div class="mydream">
 	<div class="container">
 		<section class="think_left">
-			<h1 class="wow fadeInLeft" data-wow-duration="1s">念念不忘，必有回响，有一口气，点一盏灯。</h1>
-			<p class="wow fadeInLeft" data-wow-duration="2s">生活不止眼前的苟且，还有远方的苟活，修身，齐家，平天下，我们平不了天下，但愿我们在编程的路上能够走得足够远。</p>
+			<h1 class="wow fadeInLeft" data-wow-duration="1s">
+				<?php echo webliu_option('slogantitle'); ?>
+			</h1>
+			<p class="wow fadeInUp" data-wow-duration="2s">
+				<?php echo webliu_option('slogantxt'); ?>
+			</p>
 		</section>
 		<section class="think_right wow fadeInUp" data-wow-duration="2s">
-			<a href="#">
-				<i class="fa fa-qq"></i>
-				QQ在线咨询
-			</a>
-			<p>上班、看孩，不能及时回复请留言。</p>
+			<?php if (webliu_option('sloganlink')) { ?>
+				<a href="<?php echo webliu_option('sloganlink') ?>" target="_blank">
+					<i class="fa fa-qq"></i>
+					<?php echo webliu_option('sloganlinktxt') ?>
+				</a>
+			<?php } ?>
+			<p><?php echo webliu_option('sloganremark') ?></p>
 		</section>
 	</div>
 </div>

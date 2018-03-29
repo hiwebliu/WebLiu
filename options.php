@@ -114,33 +114,6 @@ $options[] = array(
     'type'=>"upload"
 );
 $options[] = array(
-    'name'=>'宣传口号',
-    'desc'=>'搜索框上方的宣传口号',
-    'id'=>'site_slogan',
-    'std'=>'免费 开源 共享',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'宣传口号字体颜色',
-    'id'=>'site_slogan_color',
-    'std'=>'#ffffff',
-    'type'=>"color"
-);
-$options[] = array(
-    'name'=>'宣传口号字体大小',
-    'desc'=>'最好在24-50之间，太大了不好看',
-    'id'=>'site_slogan_size',
-    'std'=>'28',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'宣传口号背景图',
-    'desc'=>'最低尺寸：1366 * 230',
-    'id'=>'site_slogan_img',
-    'std'=>''.get_template_directory_uri().'/img/sloganbg.jpg',
-    'type'=>"upload"
-);
-$options[] = array(
     'name'=>'首页公告',
     'desc'=>'只在首页展示，支持Html代码，比如[a]链接',
     'id'=>'site_notices',
@@ -195,11 +168,11 @@ $options[] = array(
 
 // 首页设置：个人模板
 $options[] = array(
-    'name' => '焦点大图',
+    'name' => '首页设置',
     'type' => 'heading',
 );
 $options[] = array(
-    'name'=>'首页视觉差大图设置',
+    'name'=>'首页背景大图设置',
     'desc'=>'背景图，尺寸：1920*600以上，建议图片优化，防止首页打开速度过慢.',
     'id'=>'visualbg',
 		'std'=>''.get_template_directory_uri().'/img/visualbg.jpg',
@@ -226,14 +199,17 @@ $options[] = array(
     'std'=>'--前端刘',
     'type'=>"text"
 );
-// 收费主题栏目设置
 $options[] = array(
-    'name' => '主题推荐',
-    'type' => 'heading',
+    'name'=>'焦点图按钮',
+    'desc'=>'默认2个按钮，若想再添加按钮复制代码即可，图标请自行百度Font Awesome',
+    'id'=>'visualbts',
+    'std'=>'<a href="http://www.webliu.net" type="button"><i class="fa fa-cloud-download"></i>下载本主题</a>
+<a href="http://www.webliu.net/aboutme" type="button"><i class="fa fa-street-view"></i>关于前端刘</a>',
+    'type'=>"textarea"
 );
 $options[] = array(
     'name'  => '首页最新主题推荐设置（暂设定三篇）',
-    'desc'  => '启用(每篇填写链接后页面才可显示)',
+    'desc'  => '启用(填写链接之后才显示，默认不显示)',
     'id'    => "index_paythemes",
     'type'  => 'checkbox'
 );
@@ -408,7 +384,58 @@ $options[] = array(
     'std'=>'',
     'type'=>"text"
 );
-
+// 首页两列文章列表设置
+$options[] = array(
+    'name'=>'首页两列文章列表设置',
+    'desc'=>'左侧列表分类ID，请参照顶部【您网站所有分类及ID】',
+    'id'=>'course_catleft',
+    'std'=>'1',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'右侧列表分类ID',
+    'id'=>'course_catright',
+    'std'=>'2',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'要显示的文章数量',
+    'id'=>'course_catnum',
+    'std'=>'10',
+    'type'=>"text"
+);
+// 首页底部slogan
+$options[] = array(
+    'name'=>'首页底部slogan标题',
+    'desc'=>'能展现你比较文(Z)艺(B)气质的标题',
+    'id'=>'slogantitle',
+    'std'=>'wordpress主题专属定制，请联系前端刘:hiwebliu@163.com',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'内容',
+    'id'=>'slogantxt',
+    'std'=>'6年前端开发经验，响应式可视化网站模板，最新的前端js技术，全手动html5+css3布局，清晰的主题后台设置，集成大多数插件功能。',
+    'type'=>"textarea"
+);
+$options[] = array(
+    'desc'=>'按钮链接',
+    'id'=>'sloganlink',
+    'std'=>'http://www.webliu.net',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'按钮内容',
+    'id'=>'sloganlinktxt',
+    'std'=>'QQ在线咨询',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'备注',
+    'id'=>'sloganremark',
+    'std'=>'周一至周六，8:30-22:00',
+    'type'=>"text"
+);
 
 // SEO设置
 $options[] = array(
