@@ -124,7 +124,7 @@ $options[] = array(
 	'name'=>'关于本站描述',
     'desc'=>'网站底部关于本站的描述',
     'id'=>'foot_about',
-    'std'=>'wordpress主题网（wpztw.com）专注于wordpress建站，提供wordpress主题下载,wordpress插件,wordpress代码和wordpress教程等一站式服务,让每个使用wordpress的朋友轻松建站。',
+    'std'=>'WebLiu-前端刘（webliu.com），记录前端刘在学习、工作中的代码问题。',
     'type'=>"textarea"
 );
 $options[] = array(
@@ -138,7 +138,7 @@ $options[] = array(
 	'name'=>'网站底部信息',
     'desc'=>'包含网站备案号、版权、站点地图等。站点地图请新建页面，选择"站点地图"模板',
     'id'=>'foot_seo',
-    'std'=>'© 2013 - 2016 All Rights Reserved | Theme by wpztw.com. | 沪ICP备14045138号-1 | <a href="#">站点地图</a><a href="#" title="阿里云"><i class="fa fa-cloud"></i></a><a href="#" title="wordpress"><i class="fa fa-wordpress"></i></a>',
+    'std'=>'© 2018 All Rights Reserved | Theme by <a target="_blank" href="http://webliu.com" title="WebLiu-前端刘">webliu.com</a> | 沪ICP备14045138号-1 | <a href="#">站点地图</a><a href="#" title="阿里云"><i class="fa fa-cloud"></i></a><a href="#" title="wordpress"><i class="fa fa-wordpress"></i></a>',
     'type'=>"textarea"
 );
 $options[] = array(
@@ -148,13 +148,13 @@ $options[] = array(
     'std'=>'',
     'type'=>"textarea"
 );
-$options[] = array(
-	'name'=>'首页隐藏分类',
-    'desc'=>'首页不想展示的某些分类，请输入文章分类的ID，多个分类用英文逗号","隔开，比如：-1,-2,-3',
-    'id'=>'hidden_category',
-    'std'=>'-99999',
-    'type'=>"text"
-);
+// $options[] = array(
+// 	'name'=>'首页隐藏分类',
+//     'desc'=>'首页不想展示的某些分类，请输入文章分类的ID，多个分类用英文逗号","隔开，比如：-1,-2,-3',
+//     'id'=>'hidden_category',
+//     'std'=>'-99999',
+//     'type'=>"text"
+// );
 $options[] = array(
 	'name' => 'Gravatar 头像获取',
 	'id' => 'gravatar_url',
@@ -406,8 +406,14 @@ $options[] = array(
 );
 // 首页底部slogan
 $options[] = array(
-    'name'=>'首页底部slogan标题',
-    'desc'=>'能展现你比较文(Z)艺(B)气质的标题',
+    'name'=>'首页底部slogan设置',
+    'desc'=>'背景图，尺寸：1920 * 400 以上',
+    'id'=>'sloganbg',
+    'std'=>''.get_template_directory_uri().'/img/thinkbg.jpg',
+    'type'=>"upload"
+);
+$options[] = array(
+    'desc'=>'标题：能展现你比较文(Z)艺(B)气质的标题',
     'id'=>'slogantitle',
     'std'=>'wordpress主题专属定制，请联系前端刘:hiwebliu@163.com',
     'type'=>"text"
@@ -417,6 +423,12 @@ $options[] = array(
     'id'=>'slogantxt',
     'std'=>'6年前端开发经验，响应式可视化网站模板，最新的前端js技术，全手动html5+css3布局，清晰的主题后台设置，集成大多数插件功能。',
     'type'=>"textarea"
+);
+$options[] = array(
+    'desc'=>'字体颜色',
+    'id'=>'slogancolor',
+    'std'=>'#fff',
+    'type'=>"color"
 );
 $options[] = array(
     'desc'=>'按钮链接',
@@ -470,14 +482,14 @@ $options[] = array(
     'type'  => 'checkbox'
 );
 $options[] = array(
-    'name'  => '文章外链自动nofollow',
-    'desc'  => '启用（启用后文章及评论外链自动nofolow,利于本站权重集中,建议开启!）',
+    'name'  => '外链自动nofollow',
+    'desc'  => '启用（启用后文章内容及评论的外链自动nofolow,利于本站权重集中,建议开启!）',
     'id'    => "post_auto_nofollow",
     'type'  => 'checkbox'
 );
 $options[] = array(
     'name'  => '外链自动转GO跳转',
-    'desc'  => '启用（启用后外链自动转为http://本站go/?url=跳转链接格式,此功能需本站开启伪静态,并且固定连接后缀为.html格式,后台新建页面-模板选择Go跳转）',
+    'desc'  => '启用（启用后本站所有外链自动转为http://本站go/?url=跳转链接格式,此功能需本站开启伪静态,并且固定连接后缀为.html格式。也可后台新建页面-模板选择Go跳转）',
     'id'    => "post_gourl",
     'type'  => 'checkbox'
 );
@@ -550,13 +562,6 @@ $options[] = array(
 	'type' => 'checkbox',
 );
 $options[] = array(
-    'name' => '文章点赞功能',
-    'id' => 'post_linke_open',
-    'desc' => '启用(不想用的话去掉，还能加快加载速度)',
-    'std' => '1',
-    'type' => 'checkbox',
-);
-$options[] = array(
     'name'=>'百度口碑(或自定义链接)',
     'type'=>"subtitle"
 );
@@ -625,7 +630,7 @@ $options[] = array(
     'desc'  => '文章底部版权声明，{{title}}表示此篇文章标题，{{link}}表示此篇文章链接',
     'id'    => "post_copyright",
     'type'  => 'textarea',
-    'std'   => '本文由WP主题网出品,如未注明,均为原创,转载请注明<a href="{{link}}" target="_blank" title="{{title}}">{{title}}</a>！'
+    'std'   => '本文由WebLiu-前端刘出品,如未注明,均为原创,转载请注明：<a href="{{link}}" target="_blank" title="{{title}}">{{title}}</a>！'
 );
 // 评论设置
 $options[] = array(
@@ -655,107 +660,6 @@ $options[] = array(
     'std'   => '1'
 );
 
-
-// 首页轮播
-$options[] = array(
-    'name' => '首页轮播',
-    'type' => 'heading'
-);
-$options[] = array(
-    'name'=>'图片1',
-    'desc'=>'图片尺寸：820 * 260',
-    'id'=>'slide_one_img',
-    'std'=>''.get_template_directory_uri().'/img/slides/1.jpg',
-    'type'=>"upload"
-);
-$options[] = array(
-    'desc'=>'标题',
-    'id'=>'slide_one_title',
-    'std'=>'标题',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'链接',
-    'id'=>'slide_one_link',
-    'std'=>'#',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'图片2',
-    'desc'=>'图片尺寸：820 * 260',
-    'id'=>'slide_two_img',
-    'std'=>'',
-    'type'=>"upload"
-);
-$options[] = array(
-    'desc'=>'标题',
-    'id'=>'slide_two_title',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'链接',
-    'id'=>'slide_two_link',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'图片3',
-    'desc'=>'图片尺寸：820 * 260',
-    'id'=>'slide_three_img',
-    'std'=>'',
-    'type'=>"upload"
-);
-$options[] = array(
-    'desc'=>'标题',
-    'id'=>'slide_three_title',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'链接',
-    'id'=>'slide_three_link',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'图片4',
-    'desc'=>'图片尺寸：820 * 260',
-    'id'=>'slide_four_img',
-    'std'=>'',
-    'type'=>"upload"
-);
-$options[] = array(
-    'desc'=>'标题',
-    'id'=>'slide_four_title',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'链接',
-    'id'=>'slide_four_link',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'name'=>'图片5',
-    'desc'=>'图片尺寸：820 * 260',
-    'id'=>'slide_five_img',
-    'std'=>'',
-    'type'=>"upload"
-);
-$options[] = array(
-    'desc'=>'标题',
-    'id'=>'slide_five_title',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'链接',
-    'id'=>'slide_five_link',
-    'std'=>'',
-    'type'=>"text"
-);
 // 站长信息设置开始
 $options[] = array(
     'name' => '站长信息',
@@ -770,21 +674,30 @@ $options[] = array(
 );
 $options[] = array(
     'name'=>'站长头像',
-    'desc'=>'可以直接替换主题img目录下的tx.png，也可上传。建议尺寸：110px * 110px',
+    'desc'=>'图片用于：1.首页大图头像;2.侧边栏站长头像;3.关于站长页面',
     'id'=>'social_img',
     'std'=>''.get_template_directory_uri().'/img/slides/tx.png',
     'type'=>"upload"
 );
 $options[] = array(
+    'name'=>'站长技能',
+    'desc'=>'按格式添加font图标及title信息',
+    'id'=>'social_skill',
+    'std'=>'<i class="fa fa-vimeo-square" title="站长"></i>
+<i class="fa fa-html5" title="前端工程师"></i>
+<i class="fa fa-lastfm-square" title="C#后端开发"></i>',
+    'type'=>"textarea"
+);
+$options[] = array(
     'name'=>'站长描述',
-    'desc'=>'可以直接替换主题img目录下的tx.png，也可上传。建议尺寸：110px * 110px',
+    'desc'=>'一段简短的自我描述',
     'id'=>'social_word',
-    'std'=>'暗淡的黑，爱设计，爱电影，爱折腾代码，爱网络，更爱生活...欢迎关注wp主题网。',
+    'std'=>'前端工程师，C#后端研发',
     'type'=>"textarea"
 );
 $options[] = array(
     'name'=>'社交媒体',
-    'desc'=>'启用(内容为空咋不显示相应的图标)',
+    'desc'=>'启用(内容为空则不显示相应的图标)',
     'id'=>'social_links_open',
     'std'=>'1',
     'type'=>"checkbox"
@@ -793,6 +706,12 @@ $options[] = array(
     'desc'=>'QQ',
     'id'=>'social_qq',
     'std'=>'402777838',
+    'type'=>"text"
+);
+$options[] = array(
+    'desc'=>'GitHub',
+    'id'=>'social_github',
+    'std'=>'https://github.com/hiwebliu',
     'type'=>"text"
 );
 $options[] = array(
@@ -812,12 +731,6 @@ $options[] = array(
     'id'=>'social_email',
     'std'=>'',
     'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'RSS',
-    'id'=>'social_rss',
-    'type'=>"text",
-    'std'=>''.get_bloginfo('rss2_url').''
 );
 $options[] = array(
     'desc'=>'微信二维码，建议尺寸：200 * 200',

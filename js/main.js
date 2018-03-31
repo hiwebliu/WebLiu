@@ -46,6 +46,7 @@ var soicalColor = function() {
 	$('.user_sidebar .user_name .fa:eq(1)').addClass('black');
 	$('.user_sidebar .user_name .fa:eq(2)').addClass('blue');
 	$('.user_sidebar .user_name .fa:eq(3)').addClass('green');
+	$('.user_sidebar .user_name .fa').attr('data-toggle','tooltip');
 	$('.visual_content').removeClass('hide');
 	$('.showme_slogan').removeClass('hide');
 	$('.showme_btns').removeClass('hide');
@@ -60,6 +61,7 @@ var setCourseHeight = function() {
 		$('.leftItem .course_content').css('height',_heightR);
 	}
 };
+
 
 $(function(){
 

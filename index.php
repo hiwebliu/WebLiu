@@ -94,7 +94,7 @@
 					while( have_posts() ): the_post();
 				?>
 				<li class="wow fadeInLeft">
-				<a <?php echo post_blank(); ?> href="<?php the_permalink() ?>" rel="bookmark"  data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
+				<a <?php echo post_blank(); ?> href="<?php the_permalink() ?>" data-toggle="tooltip" title="<?php the_title_attribute(); ?>">
 				<?php if (function_exists('wpjam_has_post_thumbnail') && wpjam_has_post_thumbnail()) { ?>
 				<div class="coursePost_img">
 					<?php wpjam_post_thumbnail(array(110,80),$crop=1);?>
@@ -156,13 +156,13 @@
 </div>
 
 <!-- MyDream -->
-<div class="mydream">
+<div class="mydream" style="background-image:url(<?php echo webliu_option('sloganbg'); ?>)">
 	<div class="container">
 		<section class="think_left">
-			<h1 class="wow fadeInLeft" data-wow-duration="1s">
+			<h1 style="color: <?php echo webliu_option('slogancolor') ?>" class="wow fadeInLeft" data-wow-duration="1s">
 				<?php echo webliu_option('slogantitle'); ?>
 			</h1>
-			<p class="wow fadeInUp" data-wow-duration="2s">
+			<p style="color: <?php echo webliu_option('slogancolor') ?>" class="wow fadeInUp" data-wow-duration="2s">
 				<?php echo webliu_option('slogantxt'); ?>
 			</p>
 		</section>
@@ -178,4 +178,4 @@
 	</div>
 </div>
 
-<?php get_footer(); ?>
+	<?php get_template_part('footer_index'); ?>

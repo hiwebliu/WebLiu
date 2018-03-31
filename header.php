@@ -14,9 +14,6 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/webliu.css">
 	<link href="<?php echo get_stylesheet_directory_uri() ?>/css/prism.css" rel="stylesheet">
-	<style>
-		::-webkit-scrollbar{width:0px;}
-	</style>
 </head>
 <body class="isindex">
 	<!-- header -->

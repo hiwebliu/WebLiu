@@ -1,12 +1,12 @@
 <?php
 
-// 加载主题框架 
+// 加载主题框架
 if ( !function_exists( 'optionsframework_init' ) ) {
   define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
   require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
 add_action('optionsframework_custom_scripts', 'foot_tj_code');
-function foot_tj_code(){ 
+function foot_tj_code(){
   if (webliu_option('foot_tj')) {
     echo '<script>';
     echo webliu_option('foot_tj');
@@ -73,13 +73,6 @@ if (function_exists('register_sidebar')) {
     ));
 }
 
-
-
-
-
-
-
-
 //激活友情链接
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 //添加后台左下角文字
@@ -95,15 +88,15 @@ if (webliu_option('post_autosave')) {
 add_filter('admin_footer_text', 'git_admin_footer_text');
 
 //注册菜单
-if(function_exists('register_nav_menus')){  
-register_nav_menus(  
-  array(  
-  'header-menu' => __( '顶部导航' ),  
+if(function_exists('register_nav_menus')){
+register_nav_menus(
+  array(
+  'header-menu' => __( '顶部导航' ),
   'footer-menu' => __( '底部导航' ),
-  'page-menu' => __( 'Page页面导航' ),  
-  )  
-);  
-}  
+  'page-menu' => __( 'Page页面导航' ),
+  )
+);
+}
 
 //移除菜单li多余class
 add_filter('nav_menu_css_class', 'delete_menu_more_class', 100, 1);
@@ -132,7 +125,7 @@ function record_visitors()
   }
 }
 add_action('wp_head', 'record_visitors');
- 
+
 /// 函数名称：post_views
 /// 函数作用：取得文章的阅读次数
 function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
@@ -167,33 +160,33 @@ function par_pagenavi($range = 9){
 
 
 //文章翻页
-function pagination($query_string){   
-global $posts_per_page, $paged;   
-$my_query = new WP_Query($query_string ."&posts_per_page=-1");   
-$total_posts = $my_query->post_count;   
-if(empty($paged))$paged = 1;   
-$prev = $paged - 1;   
-$next = $paged + 1;   
-$range = 2; // only edit this if you want to show more page-links   
-$showitems = ($range * 2)+1;   
-  
-$pages = ceil($total_posts/$posts_per_page);   
-if(1 != $pages){   
-echo "<div class='pagination'>";   
-echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<a href='".get_pagenum_link(1)."'>第一页</a>":"";   
-echo ($paged > 1 && $showitems < $pages)? "<a href='".get_pagenum_link($prev)."'>上一页</a>":"";   
-  
-for ($i=1; $i <= $pages; $i++){   
-if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){   
-echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";   
-}   
-}   
-  
-echo ($paged < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($next)."'>下一页</a>" :"";   
-echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($pages)."'>最后一页</a>":"";   
-echo "</div>\n";   
-}   
-} 
+function pagination($query_string){
+global $posts_per_page, $paged;
+$my_query = new WP_Query($query_string ."&posts_per_page=-1");
+$total_posts = $my_query->post_count;
+if(empty($paged))$paged = 1;
+$prev = $paged - 1;
+$next = $paged + 1;
+$range = 2; // only edit this if you want to show more page-links
+$showitems = ($range * 2)+1;
+
+$pages = ceil($total_posts/$posts_per_page);
+if(1 != $pages){
+echo "<div class='pagination'>";
+echo ($paged > 2 && $paged+$range+1 > $pages && $showitems < $pages)? "<a href='".get_pagenum_link(1)."'>第一页</a>":"";
+echo ($paged > 1 && $showitems < $pages)? "<a href='".get_pagenum_link($prev)."'>上一页</a>":"";
+
+for ($i=1; $i <= $pages; $i++){
+if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )){
+echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+}
+}
+
+echo ($paged < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($next)."'>下一页</a>" :"";
+echo ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) ? "<a href='".get_pagenum_link($pages)."'>最后一页</a>":"";
+echo "</div>\n";
+}
+}
 
 
 //添加自定义高亮代码按钮
@@ -261,36 +254,42 @@ endif;
 //文章和评论外链自动nofolow
 if(webliu_option('post_auto_nofollow')):
 function git_auto_nofollow( $content ) {
-    $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
-    if(preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
-        if( !empty($matches) ) {
+  $regexp = "<a\s[^>]*href=(\"??)([^\" >]*?)\\1[^>]*>";
+if(preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
+  if( !empty($matches) ) {
 
-            $srcUrl = get_option('siteurl');
-            for ($i=0; $i < count($matches); $i++)
-            {
-                $tag = $matches[$i][0];
-                $tag2 = $matches[$i][0];
-                $url = $matches[$i][0];
-                $noFollow = '';
-                $pattern = '/target\s*=\s*"\s*_blank\s*"/';
-                preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
-                if( count($match) < 1 )
-                    $noFollow .= ' target="_blank" ';
-                $pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
-                preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
-                if( count($match) < 1 )
-                    $noFollow .= ' rel="nofollow" ';
-                $pos = strpos($url,$srcUrl);
-                if ($pos === false) {
-                    $tag = rtrim ($tag,'>');
-                    $tag .= $noFollow.'>';
-                    $content = str_replace($tag2,$tag,$content);
-                }
-            }
-        }
+    $srcUrl = get_option('siteurl');
+    for ($i=0; $i < count($matches); $i++)
+    {
+
+      $tag = $matches[$i][0];
+      $tag2 = $matches[$i][0];
+      $url = $matches[$i][0];
+
+      $noFollow = '';
+
+      $pattern = '/target\s*=\s*"\s*_blank\s*"/';
+      preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+      if( count($match) < 1 )
+        $noFollow .= ' target="_blank" ';
+
+      $pattern = '/rel\s*=\s*"\s*[n|d]ofollow\s*"/';
+      preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
+      if( count($match) < 1 )
+        $noFollow .= ' rel="nofollow" ';
+
+      $pos = strpos($url,$srcUrl);
+      if ($pos === false) {
+        $tag = rtrim ($tag,'>');
+        $tag .= $noFollow.'>';
+        $content = str_replace($tag2,$tag,$content);
+      }
     }
-    $content = str_replace(']]>', ']]>', $content);
-    return $content;
+  }
+}
+
+$content = str_replace(']]>', ']]>', $content);
+return $content;
 }
 add_filter( 'the_content', 'git_auto_nofollow');
 endif;
@@ -364,7 +363,7 @@ function baidu_record() {
 
 // 自动缩略图 如果没有输出随机图片
 if ( function_exists('add_theme_support') )add_theme_support('post-thumbnails');
- 
+
 function post_thumbnail_src(){
   global $post;
   if( $values = get_post_custom_values("thumb") ) { //输出自定义域图片地址
@@ -558,13 +557,13 @@ add_action('init', 'gzippy');
 endif;
 
 // 评论样式
-function aurelius_comment($comment, $args, $depth) 
+function aurelius_comment($comment, $args, $depth)
 {
    $GLOBALS['comment'] = $comment; ?>
   <li class="comment" id="li-comment-<?php comment_ID(); ?>">
       <div class="comment-gravatar"> <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
       </div>
-      <div class="comment-content" id="comment-<?php comment_ID(); ?>">   
+      <div class="comment-content" id="comment-<?php comment_ID(); ?>">
         <div class="comment-info">
           <?php printf(__('<span class="comment-author">%s</span>'), get_comment_author_link()); ?>
           <span class="comment-time"><?php echo get_comment_time('Y-m-d H:i'); ?></span>
@@ -581,7 +580,7 @@ function aurelius_comment($comment, $args, $depth)
         </div>
       </div>
 <?php }
-        
+
 
 //时间显示方式‘xx以前’
 function time_ago($type = 'commennt', $day = 7) {
@@ -662,8 +661,8 @@ function fa_cache_avatar($avatar, $id_or_email, $size, $default, $alt)
     $w = home_url();
     $e = ABSPATH .'avatar/'. $size . '*'. $f .'.jpg';
     $e2x = ABSPATH .'avatar/'. ( $size * 2 ) . '*'. $f .'.jpg';
-    $t = 1209600; 
-    if ( (!is_file($e) || (time() - filemtime($e)) > $t) && (!is_file($e2x) || (time() - filemtime($e2x)) > $t ) ) { 
+    $t = 1209600;
+    if ( (!is_file($e) || (time() - filemtime($e)) > $t) && (!is_file($e2x) || (time() - filemtime($e2x)) > $t ) ) {
         copy(htmlspecialchars_decode($g), $e);
         copy(htmlspecialchars_decode($avatar2x), $e2x);
     } else { $avatar = $w.'/avatar/'. $size . '*'.$f.'.jpg';
