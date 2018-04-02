@@ -163,7 +163,6 @@ $options[] = array(
 	'options' => array(
 		'no' =>'原有方式',
 		'ssl' =>'从Gravatar官方ssl获取',
-		'duoshuo' => '从多说服务器获取',
 ));
 
 // 首页设置：个人模板
@@ -630,7 +629,9 @@ $options[] = array(
     'desc'  => '文章底部版权声明，{{title}}表示此篇文章标题，{{link}}表示此篇文章链接',
     'id'    => "post_copyright",
     'type'  => 'textarea',
-    'std'   => '本文由WebLiu-前端刘出品,如未注明,均为原创,转载请注明：<a href="{{link}}" target="_blank" title="{{title}}">{{title}}</a>！'
+    'std'   => '<p>若未注明，本站文章均由 WebLiu-前端刘 原创发布</p>
+<p>转载请注明：<a href="{{link}}" target="_blank" title="{{title}}">{{title}}</a>！</p>
+<p>若有版权问题，请留言或联系站长！</p>'
 );
 // 评论设置
 $options[] = array(
@@ -797,34 +798,6 @@ $options[] = array(
     'type'=>"checkbox"
 );
 $options[] = array(
-	'name'=>'新文章同步到微博',
-    'type'=>"subtitle"
-);
-$options[] = array(
-    'desc'=>'启用(新发布的文章自动同步到微博)',
-    'id'=>'postto_sina_open',
-    'std'=>'0',
-    'type'=>"checkbox"
-);
-$options[] = array(
-    'desc'=>'新浪微博账户',
-    'id'=>'postto_sina_name',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
-    'desc'=>'新浪微博密码',
-    'id'=>'postto_sina_psd',
-    'std'=>'',
-    'type'=>"password"
-);
-$options[] = array(
-    'desc'=>'新浪appkey(用于微博文章显示：来自xx网) <a class="ztbtn" href="http://open.weibo.com/index.php">申请appkey</a>',
-    'id'=>'postto_sina_appkey',
-    'std'=>'',
-    'type'=>"text"
-);
-$options[] = array(
 	'name'=>'隐藏后台登录地址',
     'type'=>"subtitle"
 );
@@ -893,7 +866,8 @@ $options[] =  array(
 );
 $options[] = array(
 	'type'=>'title',
-	'desc'=>'使用主题前，请详细阅读本主题的使用说明！',
+	'desc'=>'<div class="xxx">此主题是由 <b>前端刘(webliu.net)</b> 设计开发的，使用主题前，请详细阅读本主题的使用说明！</div>',
+	'id'=>'aaaa',
 );
 
 

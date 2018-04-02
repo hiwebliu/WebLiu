@@ -33,6 +33,14 @@
 <?php if(webliu_option('prism_open')) { ?>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/prism.js"></script>
 <?php } ?>
+<?php if(webliu_option('fancybox_open')) { ?>
+<script src="<?php echo get_stylesheet_directory_uri() ?>/fancybox/fancybox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+</script>
+<?php } ?>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/wow.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/main.js"></script>
 </body>

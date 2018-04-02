@@ -144,7 +144,9 @@
 						</ul>
 					</section>
 					<!-- 文章评论 -->
-
+					<section class="post-comments">
+						<?php comments_template(); ?>
+					</section>
 				</div>
 
 				<aside class="sidebar">
@@ -161,8 +163,14 @@
 							<?php include 'includes/social.php' ?>
 						<?php } ?>
 						<div class="user_num">
-							<div class="postNum"><em>文章数</em><b>111</b></div>
-							<div class="comNum"><em>评论数</em><b>222</b></div>
+							<div class="postNum"><em>文章数</em><b>
+								<?php echo count_user_posts('1','post',false); ?>
+							</b></div>
+							<div class="comNum"><em>评论数</em><b>
+								<?php
+								echo get_comments('count=true&user_id=1');
+								?>
+							</b></div>
 						</div>
 					</section>
 				</aside>

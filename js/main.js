@@ -100,7 +100,6 @@ $(function(){
 	$(".gotop").click(function(){
 		$('html,body').animate({'scrollTop':0},500); //返回顶部动画 数值越小时间越短
 	});
-
 	// 激活Tips效果
 	$('[data-toggle="tooltip"]').tooltip();
 
