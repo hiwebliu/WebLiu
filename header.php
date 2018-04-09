@@ -11,11 +11,11 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/animate.min.css" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/webliu.css">
 	<link href="<?php echo get_stylesheet_directory_uri() ?>/css/prism.css" rel="stylesheet">
+	<?php wp_head(); ?>
 </head>
-<body class="isindex">
+<body>
 	<!-- header -->
 	<div class="header">
 		<div class="container">

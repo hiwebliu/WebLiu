@@ -1,3 +1,5 @@
+<?php ?>
+
 
 	<footer class="footcopy wow fadeInUp">
 		<div class="menu-footer_menu-container">
@@ -43,5 +45,9 @@
 <?php } ?>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/wow.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/main.js"></script>
+
+
+
+<?php wp_footer(); ?>
 </body>
 </html>

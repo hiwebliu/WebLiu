@@ -548,31 +548,6 @@ add_action('init', 'gzippy');
 }
 endif;
 
-// 评论样式
-function aurelius_comment($comment, $args, $depth)
-{
-   $GLOBALS['comment'] = $comment; ?>
-  <li class="comment" id="li-comment-<?php comment_ID(); ?>">
-      <div class="comment-gravatar"> <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
-      </div>
-      <div class="comment-content" id="comment-<?php comment_ID(); ?>">
-        <div class="comment-info">
-          <?php printf(__('<span class="comment-author">%s</span>'), get_comment_author_link()); ?>
-          <span class="comment-time"><?php echo get_comment_time('Y-m-d H:i'); ?></span>
-          <?php if($comment->user_id == 1){ echo '<span class="admin-author">站长</span>'; } ?>
-          <div class="comment_reply">
-            <?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-          </div>
-        </div>
-        <div class="comment-text">
-        <?php if ($comment->comment_approved == '0') : ?>
-            <em>你的评论正在审核，稍后会显示出来！</em><br />
-        <?php endif; ?>
-        <?php comment_text(); ?>
-        </div>
-      </div>
-<?php }
-
 
 //时间显示方式‘xx以前’
 function time_ago($type = 'commennt', $day = 7) {
@@ -633,6 +608,10 @@ function deel_add_checkbox() {
 }
 add_action('comment_form', 'deel_add_checkbox');
 
+
+
+
+
 //自定义表情路径
 function custom_smilies_src($src, $img){return get_bloginfo('template_directory').'/img/smilies/' . $img;}
 add_filter('smilies_src', 'custom_smilies_src', 10, 2);
@@ -668,10 +647,7 @@ function fa_cache_avatar($avatar, $id_or_email, $size, $default, $alt)
 add_filter('get_avatar', 'fa_cache_avatar',1,5);
 endif;
 
-//移除评论内容中的链接
-if (webliu_option('no_comment_link')):
-remove_filter( 'comment_text', 'make_clickable',  9 );
-endif;
+
 
 // 文章归档功能
 function zww_archives_list() {
@@ -721,6 +697,26 @@ function clear_db_cache_archives_list() {
 }
 add_action('save_post', 'clear_db_cache_archives_list'); // 新发表文章/修改文章时
 
+// 回复时在当前评论下面出现评论框
+function twentyfifteen_scripts() {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
+
+// 隐藏顶部工具栏
+show_admin_bar(false);
+
+
+
+
+
+
+
+
+
+
 
 // 去除Category
 include 'includes/no-category.php';
@@ -739,54 +735,6 @@ if( webliu_option('compress_html') ){
   require_once get_stylesheet_directory() . '/includes/compress-html.php';
 }
 
-
-//获取访问量
-function custom_the_views($post_id, $echo=true, $views='') {
-    $count_key = 'views';
-    $count = get_post_meta($post_id, $count_key, true);
-    if ($count == '') {
-        delete_post_meta($post_id, $count_key);
-        add_post_meta($post_id, $count_key, '0');
-        $count = '0';
-    }
-    if ($echo)
-        echo number_format_i18n($count) . $views;
-    else
-        return number_format_i18n($count) . $views;
-}
-function set_post_views() {
-    global $post;
-    $post_id = $post->ID;
-    $count_key = 'views';
-    $count = get_post_meta($post_id, $count_key, true);
-    if (is_single() || is_page()) {
-        if ($count == '') {
-            delete_post_meta($post_id, $count_key);
-            add_post_meta($post_id, $count_key, '0');
-        } else {
-            update_post_meta($post_id, $count_key, $count + 1);
-        }
-    }
-}
-add_action('get_header', 'set_post_views');
-
-//自定义后台登陆
-function custom_login() {
-	echo '<link rel="shortcut icon"  href="' . get_bloginfo('template_directory') . '/custom_login/custom_favicon.ico" />';
-	echo '<link rel="stylesheet" tyssspe="text/css" href="' . get_bloginfo('template_directory') . '/custom_login/custom_login.css" />';
-	echo '<script src="' . get_bloginfo('template_directory') . '/custom_login/custom_login.js"></script>';
-}
-add_action('login_head', 'custom_login');
-
-
-
-function my_notes_scripts_styles() {
-	global $wp_styles;
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
-}
-add_action( 'wp_enqueue_scripts', 'my_notes_scripts_styles' );
 
 
 

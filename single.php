@@ -100,7 +100,7 @@
 				<?php endif; ?>
 
 					<!--相关文章-->
-					<section class="article_item article-related">
+					<section class="article_item wow fadeInUp article-related">
 						<h3><?php echo webliu_option('post_related_title'); ?></h3>
 						<ul>
 							<?php
@@ -144,7 +144,7 @@
 						</ul>
 					</section>
 					<!-- 文章评论 -->
-					<section class="post-comments">
+					<section>
 						<?php comments_template(); ?>
 					</section>
 				</div>

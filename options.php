@@ -179,7 +179,7 @@ $options[] = array(
 );
 $options[] = array(
     'name'=>'描述1',
-    'desc'=>'请输入一段较为装逼的文字',
+    'desc'=>'请输入一段文字',
     'id'=>'zbword1',
     'std'=>'想制定更为装逼的Wordpress主题?',
     'type'=>"text"
@@ -426,7 +426,7 @@ $options[] = array(
 $options[] = array(
     'desc'=>'字体颜色',
     'id'=>'slogancolor',
-    'std'=>'#fff',
+    'std'=>'#cacaca',
     'type'=>"color"
 );
 $options[] = array(
@@ -637,14 +637,6 @@ $options[] = array(
 $options[] = array(
     'name' => '评论设置',
     'type' => 'heading'
-);
-$options[] = array(
-    'name'  => '最大嵌套评论层数',
-    'desc'  => '嵌套评论层数别太多，不然影响美观',
-    'id'    => "comments-floor",
-    'type'  => 'text',
-    'std'   => '5',
-    'class' => 'mini'
 );
 $options[] = array(
     'name'  => '缓存评论头像',
