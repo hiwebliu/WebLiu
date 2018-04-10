@@ -50,10 +50,10 @@
 	</div>
 
 	<div class="wrapper">
-		<section class="article_wrapper" style="min-height: 500px;">
+		<section class="article_wrapper">
 			<div class="container">
-				<div class="ads_articleTop wow fadeInUp" style="display: none;">
-						<img src="images/1200-80.jpg"/>
+				<div class="ads_articleTop">
+						<!-- <img src="images/1200-80.jpg"/> -->
 				</div>
 
 				<div class="article_left">
@@ -64,7 +64,7 @@
 							<a href="#" data-toggle="tooltip" title="前端刘"><i class="fa fa-map-marker"></i>前端刘</a> /
 							<a href="#" data-toggle="tooltip" title="wordpress教程">wordpress教程</a>
 						</div>
-						<a class="ad_postTop" href="#"><img src="img/ad_postTop900.jpg"></a>
+						<!-- <a class="ad_postTop" href="#"><img src="img/ad_postTop900.jpg"></a> -->
 						<?php the_content(); ?>
 						<?php if (webliu_option('post_dashang_open')) { ?>
 						<div class="post_function">
@@ -150,7 +150,7 @@
 				</div>
 
 				<aside class="sidebar">
-					<section class="user_sidebar">
+					<section class="user_sidebar showlater wow fadeInRight">
 						<p class="user_img">
 							<a href="#" title="前端刘"><img src="<?php echo webliu_option('social_img'); ?>"></a>
 						</p>

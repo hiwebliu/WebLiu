@@ -708,7 +708,30 @@ add_action( 'wp_enqueue_scripts', 'twentyfifteen_scripts' );
 // 隐藏顶部工具栏
 show_admin_bar(false);
 
-
+// 评论样式
+function aurelius_comment($comment, $args, $depth)
+{
+   $GLOBALS['comment'] = $comment; ?>
+  <li class="comment" id="li-comment-<?php comment_ID(); ?>">
+      <div class="comment-gravatar"> <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
+      </div>
+      <div class="comment-content" id="comment-<?php comment_ID(); ?>">
+        <div class="comment-info">
+          <?php printf(__('<span class="comment-author">%s</span>'), get_comment_author_link()); ?>
+          <span class="comment-time"> - <?php echo get_comment_time('Y-m-d H:i'); ?></span>
+          <?php if($comment->user_id == 1){ echo '<i class="fa fa-vimeo-square red" title="站长" data-toggle="tooltip"></i>'; } ?>
+          <div class="comment_reply">
+            <?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+          </div>
+        </div>
+        <div class="comment-text">
+        <?php if ($comment->comment_approved == '0') : ?>
+            <em>你的评论正在审核，稍后会显示出来！</em><br />
+        <?php endif; ?>
+        <?php comment_text(); ?>
+        </div>
+      </div>
+<?php }
 
 
 

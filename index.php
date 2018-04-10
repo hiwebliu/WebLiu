@@ -2,27 +2,27 @@
 
 <!-- Show Me -->
 <div class="full_screen visual" style="background:url(<?php echo webliu_option('visualbg'); ?>;)">
-	<section class="visual_content hide">
-		<div class="showme_content wow bounceIn">
+	<section class="visual_content">
+		<div class="showme_content showlater wow bounceIn">
 			<img class="trans_around1" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
 			<img class="trans_around2" src="<?php echo get_template_directory_uri() ?>/img/trbg1.png" />
 			<img class="showme_timg" src="<?php echo webliu_option('social_img'); ?>"/>
 		</div>
 	</section>
 
-	<section class="showme_slogan hide">
-		<div class="showme_sloganT wow bounceInLeft" data-wow-duration="3s">
+	<section class="showme_slogan">
+		<div class="showme_sloganT showlater wow bounceInLeft" data-wow-duration="3s">
 			<h3><?php echo webliu_option('zbword1'); ?></h3>
 		</div>
-		<div class="showme_sloganT wow bounceInRight" data-wow-duration="4s">
+		<div class="showme_sloganT showlater wow bounceInRight" data-wow-duration="4s">
 			<h3><?php echo webliu_option('zbword2'); ?></h3>
 		</div>
-		<div class="showme_sloganName wow bounceInUp" data-wow-duration="5s">
+		<div class="showme_sloganName showlater wow bounceInUp" data-wow-duration="5s">
 			<?php echo webliu_option('zbword3'); ?>
 		</div>
 	</section>
 
-	<section class="showme_btns hide">
+	<section class="showme_btns showlater wow fadeInUp" data-wow-delay="2s">
 		<?php echo webliu_option('visualbts'); ?>
 	</section>
 </div>

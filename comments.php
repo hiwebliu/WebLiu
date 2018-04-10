@@ -24,8 +24,7 @@
     <p>还没有任何评论，你来说两句吧！</p>
 <?php
     } else {
-        $num = webliu_option('comments-floor');
-        wp_list_comments('type=comment');
+		wp_list_comments('type=comment&callback=aurelius_comment');
     }
 ?>
 	</ol>
@@ -40,7 +39,7 @@
 				'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
 				'email'  => '<p class="comment-form-email comment_item"><label for="email">' . __( '邮箱(必填)' ) . '</label> ' . ( $req ? '<span class="required"></span>' : '' ) .
 				'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-				'url'    => '<p class="comment-form-url comment_item"><label for="url">' . __( '你的网址' ) . '</label>' .
+				'url'    => '<p class="comment-form-url comment_item"><label for="url">' . __( '你的网址 ' ) . '</label>' .
 				'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 				)),
         'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="说有用的话，做有用的人"></textarea></p>',

@@ -47,9 +47,6 @@ var soicalColor = function() {
 	$('.user_sidebar .user_name .fa:eq(2)').addClass('blue');
 	$('.user_sidebar .user_name .fa:eq(3)').addClass('green');
 	$('.user_sidebar .user_name .fa').attr('data-toggle','tooltip');
-	$('.visual_content').removeClass('hide');
-	$('.showme_slogan').removeClass('hide');
-	$('.showme_btns').removeClass('hide');
 };
 // 文章高度一致
 var setCourseHeight = function() {
@@ -64,7 +61,7 @@ var setCourseHeight = function() {
 
 
 $(function(){
-
+	$('.wow').removeClass('showlater');
 	scrollEffect();
 	soicalColor();
 	setCourseHeight();
@@ -107,7 +104,7 @@ $(function(){
 	var wow = new WOW({
 	boxClass: 'wow',
 	animateClass: 'animated',
-	offset: 20,
+	offset: 0,
 	mobile: true,
 	live: true
 	});
