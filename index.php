@@ -178,4 +178,4 @@
 	</div>
 </div>
 
-	<?php get_template_part('footer_index'); ?>
+	<?php get_template_part('footer-index'); ?>

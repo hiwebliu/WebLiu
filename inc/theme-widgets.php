@@ -5,7 +5,7 @@ function get_widgetads() {
     register_widget('get_widgetad');
 }
 class get_widgetad extends WP_Widget {
-    
+
     function __construct() {
         $widget_ops = array(
             'classname' => 'widgetad paddingnone wow fadeInUp',
@@ -119,7 +119,7 @@ function mod_newcomments($limit, $outpost, $outer) {
     $sql = "SELECT DISTINCT ID, post_title, post_password, comment_ID, comment_post_ID, comment_author, comment_date_gmt, comment_approved,comment_author_email, comment_type,comment_author_url, SUBSTRING(comment_content,1,40) AS com_excerpt FROM $wpdb->comments LEFT OUTER JOIN $wpdb->posts ON ($wpdb->comments.comment_post_ID = $wpdb->posts.ID) WHERE comment_post_ID!='" . $outpost . "' AND user_id!='" . $outer . "' AND comment_approved = '1' AND comment_type = '' AND post_password = '' ORDER BY comment_date_gmt DESC LIMIT $limit";
     $comments = $wpdb->get_results($sql);
     foreach ($comments as $comment) {
-        $output.= '<li><a target="_blank" href="' . get_permalink($comment->ID) . '#comment-' . $comment->comment_ID . '" title="' . $comment->post_title . '上的评论">' . str_replace(' src=', ' data-original=', get_avatar($comment->comment_author_email, $size = '36', deel_avatar_default())) . ' <div class="content"><i>' . strip_tags($comment->comment_author) . '</i>' . timeago($comment->comment_date_gmt) . '说：<br>' . str_replace(' src=', ' data-original=', convert_smilies(strip_tags($comment->com_excerpt))) . '</div></a></li>';
+        $output.= '<li><a target="_blank" href="' . get_permalink($comment->ID) . '#comment-' . $comment->comment_ID . '" data-toggle="tooltip" title="' . $comment->post_title . '上的评论">' . str_replace(' src=', ' data-original=', get_avatar($comment->comment_author_email, $size = '36', deel_avatar_default())) . ' <div class="content"><i>' . strip_tags($comment->comment_author) . '</i> 说：<br>' . str_replace(' src=', ' data-original=', convert_smilies(strip_tags($comment->com_excerpt))) . '</div></a></li>';
     }
     echo $output;
 };
@@ -227,19 +227,17 @@ function githeme_posts_list($orderby, $limit, $cat, $img) {
 ?>
 <li>
 <a target="_blank" href="<?php
-        the_permalink(); ?>" title="<?php
+        the_permalink(); ?>" data-toggle="tooltip" title="<?php
         the_title(); ?>" ><?php
             if ($img) {
                 echo '<span class="thumbnail">';
                 echo '<img width="100px" height="64px" src="' . get_template_directory_uri() . '/timthumb.php?src=';
                 echo post_thumbnail_src();
-                echo '&h=64&w=100&q=90&zc=1&ct=1" alt="' . get_the_title() . '" /></span>';
+                echo '&h=100&w=220&q=90&zc=1&ct=1" alt="' . get_the_title() . '" /></span>';
             } else {
                 $img = '';
         } ?><span class="text"><?php
-        the_title(); ?></span><span class="muted"><?php
-        the_time('Y-m-d'); ?></span><span class="muted"><?php
-        comments_number('0', '1评论', '%评论'); ?></span></a>
+        the_title(); ?></span></a>
 </li>
 <?php
     endwhile;

@@ -43,8 +43,7 @@ a {
 	 -o-transition: all .8s ease;
     transition: all .8s ease; */
 }
-a:focus, a:hover,
-.article_content a {
+a:focus, a:hover {
 	color: #ff6400;
 }
 i {
@@ -1160,7 +1159,7 @@ input:focus {
 	margin-bottom: 20px;
 	position: relative;
 }
-.article_item h3::after {
+.post-comments h3::after {
 	position: absolute;
 	content: "";
 	width: 50px;
@@ -1178,6 +1177,7 @@ input:focus {
 .article_content p {
 	font-size: 16px;
 	line-height: 1.75em;
+	text-align: justify;
 }
 .article_content em {
 	color: #A40000;
@@ -1224,9 +1224,9 @@ input:focus {
     color: #999;
 }
 .article_tags a:hover {
-	background: #ff6400;
+	background: #333;
     color: #fff;
-    border-color: #ff6400;
+    border-color: #333;
 }
 
 .single_TopWrap {
@@ -1248,7 +1248,7 @@ input:focus {
 .post_dashang {
   padding: 12px 25px;
 	margin: 0;
-  background: #ff6400;
+  background: #333;
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -1259,8 +1259,8 @@ input:focus {
 	display: none;
   bottom: 44px;
   left: 50%;
-  width: 320px;
-  height: 220px;
+  width: 360px;
+  height: 250px;
   margin-left: -175px;
   border: 1px solid #e6e6e6;
   background: #fff;
@@ -1268,15 +1268,18 @@ input:focus {
   border-radius: 6px;
 }
 .code_dashang {
-  float: left;
-  margin: 5px 4px;
+	float: left;
+    width: 50%;
+    margin: 25px 0;
 }
 .code_dashang img {
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border: 0;
+	display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 .code_dashang b {
   font-size: 14px;
@@ -1487,15 +1490,6 @@ input:focus {
   float: left;
   margin-right: 14px;
 }
-.commentlist>li>.comment-gravatar::before {
-	position: absolute;
-    content: "";
-    top: 6px;
-    border-left: 4px solid #ff6400;
-    display: block;
-    left: -21px;
-    height: 50px;
-}
 .comment-gravatar img {
   max-width: 100%;
   border-radius: 50%;
@@ -1603,9 +1597,9 @@ input:focus {
 	transition: all .3s ease-in-out;
 }
 .form-submit .submit:hover {
-	background: #ff6400;
+	background: #333;
 	color: #fff;
-	border-color: #ff6400;
+	border-color: #333;
 }
 .comment_mail_notify {
 	color: #999;
@@ -1688,6 +1682,7 @@ input:focus {
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
     border-radius: 4px;
+	margin-bottom: 20px;
 }
 .user_sidebar .user_img a {
     display: inline-block;
@@ -1740,7 +1735,6 @@ input:focus {
 }
 .user_sidebar .user_num b {
 	display: block;
-	font-size: 20px;
 }
 .user_sidebar .user_num em, .user_sidebar .user_num b {
 	height: 20px;
@@ -1784,8 +1778,268 @@ input:focus {
 .user_links .social_email {
   background-color: #36a195;
 }
-
-
+/* 侧边栏样式 */
+.sidebar .widget {
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 15px 20px 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(7,17,27,.1);
+}
+.widget ul:after, .widget ul:before {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+.sidebar .widget h4, .index-contactbox h4 {
+  padding: 15px 0;
+}
+.widget .title, .index-contactbox .title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.widget .title h2 {
+	font-size: 18px;
+}
+/* .widget .title:after, .index-contactbox .title:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #ff7200;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+} */
+.subscribe {}
+.subscribe form {
+	position: relative;
+}
+.widget_search .screen-reader-text {display: none;}
+.subscribe .rsstxt, .widget_search #s {
+	border: 1px solid #555;
+	padding: 4px 50px 4px 10px;
+}
+.subscribe .btn, .widget_search #searchsubmit {
+	box-shadow: none;
+	width: 50px;
+	padding: 5px 7px;
+	border-radius: 0;
+	background-color: #555;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 0px;
+}
+.widget_search #searchsubmit {margin-left: -4px;}
+.subscribe .btn:hover, .subscribe .btn:focus, .widget_search #searchsubmit:hover, .widget_search #searchsubmit:focus {
+    opacity: 1;
+    border:0;
+}
+.recommend {}
+.recommend a {
+  display: block;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 16px;
+}
+.recommend .aclass01, .recommend .aclass02, .recommend .aclass03, .recommend .aclass04, .recommend .aclass05 {
+  font-size:16px;
+  height:38px;
+  line-height:38px;
+  text-decoration:none;
+  padding:0;
+  color:#FFF;
+  width:100%;
+  text-align:center;
+  display:inline-block;
+  text-decoration-line:none;
+  font-weight: 300;
+}
+.recommend .aclass01 {
+  background:none repeat scroll 0 0 #000
+}
+.recommend .aclass01:hover {
+  transition-duration:.3s;
+  opacity: 0.8;
+}
+.recommend .aclass02 {
+  background:none repeat scroll 0 0 #0e7f9e
+}
+.recommend .aclass02:hover {
+  transition-duration:.3s;
+  opacity: 0.8;
+}
+.recommend .aclass03 {
+  background:none repeat scroll 0 0 #d9534f
+}
+.recommend .aclass03:hover {
+  transition-duration:.3s;
+  opacity: 0.8;
+}
+.recommend .aclass04 {
+  background:none repeat scroll 0 0 #ff7200
+}
+.recommend .aclass04:hover {
+  transition-duration:.3s;
+  opacity: 0.8;
+}
+.recommend .aclass05 {
+  background:none repeat scroll 0 0 #33ad1b;
+}
+.recommend .aclass05:hover {
+  transition-duration:.3s;
+  opacity: 0.8;
+}
+.paddingnone {padding: 0 !important;}
+.textbanner {}
+.textbanner a {
+  font-size: 12px;
+  color:#999;
+}
+.textbanner p {
+  line-height: 22px;
+}
+.postlist {}
+.postlist li a {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+.postlist .thumbnail {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow: hidden;
+}
+.postlist .thumbnail img {
+	width: 100%;
+	transition: all .3s ease;
+}
+.postlist .thumbnail img:hover {
+	transform:scale(1.1);
+}
+.postlist .text {
+	line-height: 25px;
+    overflow: hidden;
+    display: block;
+    height: 25px;
+    font-size: 12px;
+    white-space: nowrap;
+	padding: 0 5px;
+}
+.postlist .muted {
+    padding-left: 10px;
+    color:#999;
+    font-size: 12px;
+}
+.weget-tags {}
+.weget-tags a {
+	border: 1px solid #ebebeb;
+	padding: 4px 6px;
+	color: #959595;
+	display: inline-block;
+	margin: 2px;
+	font-size: 12px;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.weget-tags a:hover {
+  color: #fff;
+  background: #333;
+  border: 1px solid #333;
+}
+.widget_comment {}
+.widget_comment li{}
+.widget_comment li a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding: 0 20px;
+  color:#555;
+}
+.widget_comment .avatar {
+  border-radius: 50%;
+  float: left;
+  position: relative;
+  bottom: -2px;
+  margin: 8px 0 0 -20px;
+}
+.widget_comment div.content {
+    margin-left: 30px;
+    padding: 8px 0;
+    width: 160px;
+    font-size: 12px;
+    text-align: justify;
+    border-bottom: 1px solid #eee;
+    max-height: 85px;
+    overflow: hidden;
+}
+.widget_comment div.content:before {
+/*  content: '';
+  display: inline-block;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 9px solid #eee;
+  position: absolute;
+  top: 15px;
+  left: -9px;*/
+}
+.widget_comment div.content:after {
+/*  content: '';
+  display: inline-block;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right: 7px solid #fbfdfb;
+  position: absolute;
+  top: 17px;
+  left: -7px;*/
+}
+.widget_comment div.content i {
+  font-style: normal;
+  color:#FF7200;
+  margin-right: 2px;
+}
+.widget_tongji li {
+  color:#555;
+  font-size: 14px;
+  line-height: 22px;
+  margin-left: 20px;
+  list-style-type: circle;
+}
+.widgetad {
+  width: 100%;
+  overflow: hidden;
+}
+.widgetad img {
+  max-width: 100%;
+}
+.widget_categories ul:after, .widget_links ul:after {
+  content: "";
+  clear: both;
+}
+.widget_categories li, .widget_links li {
+  width: 50%;
+  overflow: hidden;
+  float: left;
+  line-height: 24px;
+  font-size: 14px;
+}
+.widget_archive li {
+  line-height: 24px;
+}
+.widget_archive li a {
+  font-size: 14px;
+}
 
 /*=========================================== 广告样式  =========================================== */
 .ads_single img,
