@@ -61,8 +61,7 @@
 					<!--文章内容-->
 					<section class="article_item article_content">
 						<div class="breadcrumb">
-							<a href="#" data-toggle="tooltip" title="前端刘"><i class="fa fa-map-marker"></i>前端刘</a> /
-							<a href="#" data-toggle="tooltip" title="wordpress教程">wordpress教程</a>
+							<?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>
 						</div>
 						<!-- <a class="ad_postTop" href="#"><img src="img/ad_postTop900.jpg"></a> -->
 						<?php the_content(); ?>

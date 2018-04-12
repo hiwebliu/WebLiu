@@ -330,7 +330,7 @@ class get_rec extends WP_Widget {
 					<option value="aclass01" <?php
         selected('aclass01', $instance['aclass1']); ?>>黑色</option>
 					<option value="aclass02" <?php
-        selected('aclass02', $instance['aclass1']); ?>>蓝色</option>
+        selected('aclass02', $instance['aclass1']); ?>>紫色</option>
 					<option value="aclass03" <?php
         selected('aclass03', $instance['aclass1']); ?>>红色</option>
 					<option value="aclass04" <?php
@@ -647,7 +647,7 @@ class get_textbanner extends WP_Widget {
         echo $before_widget;
         echo '<a class="' . $style . '" href="' . $link . '"' . $lank . '>';
         echo '<div class="title"><h2>' . $tag . '</h2></div>';
-        echo '<h3>' . $title . '</h3>';
+        echo '<h3 class="name">' . $title . '</h3>';
         echo '<p>' . $content . '</p>';
         echo '</a>';
         echo $after_widget;
