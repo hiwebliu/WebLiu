@@ -1,5 +1,5 @@
-<?php get_header(); ?>
 
+<?php get_template_part('header-index'); ?>
 <!-- Show Me -->
 <div class="full_screen visual" style="background:url(<?php echo webliu_option('visualbg'); ?>;)">
 	<section class="visual_content">

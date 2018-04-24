@@ -76,14 +76,15 @@ $(function(){
 	// 搜索功能显示、隐藏
 	$('.search_show').click(function(){
 		var scrollTop = $(window).scrollTop();
-		$('.search_wrap').addClass('isshow');
 		$('.search_wrap').css('top',scrollTop);
-		$('.search_wrap').animate({height:'100vh'},500);
-		$('body').css('overflow-y','hidden');
+		$('.search_wrap').show(500,function(){
+			$('body').css('overflow-y','hidden');
+		});
 	});
 	$('.search_close .fa').click(function(){
-		$('.search_wrap').animate({height:'0'},500);
+		$('.search_wrap').hide(300);
 		$('body').css('overflow-y','auto');
+
 	});
 	// 返回顶部
 	$(window).scroll(function(){

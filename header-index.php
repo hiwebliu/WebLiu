@@ -16,7 +16,7 @@
 	<?php wp_head(); ?>
 	<?php if ( is_home() ) { ?><?php echo '<style>::-webkit-scrollbar {width: 0px;}</style>' ?><?php } ?>
 </head>
-<body class="notindex">
+<body>
 	<!-- header -->
 	<div class="header">
 		<div class="container">
