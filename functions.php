@@ -224,10 +224,21 @@ add_filter( 'the_content', 'article_index' );
 endif;
 
 
-
-
-
-
+//增强编辑器开始
+    function enable_more_buttons($buttons) {
+    $buttons[] = 'hr';
+    $buttons[] = 'fontsizeselect';
+    $buttons[] = 'indent';
+    $buttons[] = 'outdent';
+    $buttons[] = 'sup';
+    $buttons[]= 'del';
+    $buttons[] = 'forecolor';
+    $buttons[] = 'backcolor';
+	$buttons[] = 'code';
+    return $buttons;
+       }
+    add_filter("mce_buttons", "enable_more_buttons");
+//增强编辑器结束
 
 //图片img和a链接自动添加alt，title属性
 if(webliu_option('post_img_auto_title')):
@@ -822,6 +833,60 @@ function cmp_breadcrumbs() {
 		}
 	}
 }
+
+
+// 短代码按钮
+// 自定义默认按钮
+function webliubtn($atts, $content=null, $code="")
+{
+	$return = '<button class="webliubtn">';
+	$return .= $content;
+	$return .= '</button>';
+	return $return;
+}
+add_shortcode('btn','webliubtn');
+
+// 自定义蓝色按钮
+function webliubtn_blue($atts, $content=null, $code="")
+{
+	$return = '<button class="webliubtn btnblue">';
+	$return .= $content;
+	$return .= '</button>';
+	return $return;
+}
+add_shortcode('btn_blue','webliubtn_blue');
+
+// 自定义绿色按钮
+function webliubtn_green($atts, $content=null, $code="")
+{
+	$return = '<button class="webliubtn btngreen">';
+	$return .= $content;
+	$return .= '</button>';
+	return $return;
+}
+add_shortcode('btn_green','webliubtn_green');
+
+// 自定义粉色按钮
+function webliubtn_pink($atts, $content=null, $code="")
+{
+	$return = '<button class="webliubtn btnpink">';
+	$return .= $content;
+	$return .= '</button>';
+	return $return;
+}
+add_shortcode('btn_pink','webliubtn_pink');
+
+// 自定义橘色按钮
+function webliubtn_orange($atts, $content=null, $code="")
+{
+	$return = '<button class="webliubtn btnorange">';
+	$return .= $content;
+	$return .= '</button>';
+	return $return;
+}
+add_shortcode('btn_orange','webliubtn_orange');
+
+
 
 
 

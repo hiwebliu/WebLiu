@@ -36,13 +36,13 @@
 				<aside class="sidebar wow showlater">
 					<section class="valuetheme-info widget wow fadeInRight">
 						<ul>
-							<li><span>最新版本</span>1.0</li>
-							<li><span>发布日期</span>2018-04-25</li>
-							<li><span>上次更新</span>2018-05-01</li>
-							<li><span>WP版本</span>4.9+</li>
-							<li><span>PHP版本</span>支持5.3及以上</li>
-							<li><span>兼容说明</span>Chrome、Firefox、Opera、Safari</li>
-							<li><span>其他描述</span>内置强大的主题设置，集成众多插件功能，10+小工具，多功能页面。</li>
+							<li><span>最新版本</span><?php echo get_post_meta($post->ID,"latest-version",$single = true); ?></li>
+							<li><span>发布日期</span><?php echo get_post_meta($post->ID,"release-date",$single = true); ?></li>
+							<li><span>上次更新</span><?php echo get_post_meta($post->ID,"update-date",$single = true); ?></li>
+							<li><span>WP版本</span><?php echo get_post_meta($post->ID,"wp-version",$single = true); ?></li>
+							<li><span>PHP版本</span><?php echo get_post_meta($post->ID,"php-version",$single = true); ?></li>
+							<li><span>兼容说明</span><?php echo get_post_meta($post->ID,"browser-version",$single = true); ?></li>
+							<li><span>其他描述</span><?php echo get_post_meta($post->ID,"theme-desc",$single = true); ?></li>
 						</ul>
 					</section>
 					<section class="user_sidebar wow fadeInRight">

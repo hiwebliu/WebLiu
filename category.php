@@ -27,7 +27,7 @@ $description = trim(strip_tags(category_description()));
 						</div>
 						<?php } ?>
 						<div class="post-abstract">
-							<h2><a class="post_ttle" <?php echo post_blank(); ?> href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+							<h2><a class="post_ttle" <?php echo post_blank(); ?> href="<?php the_permalink(); ?>" rel="bookmark" data-toggle="tooltip" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 							<div class="note">
 								<?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 200,"..."); ?>
