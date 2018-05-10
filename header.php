@@ -9,7 +9,7 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/reset.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//at.alicdn.com/t/font_653527_i8u4s9qyo7nqxgvi.css">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_653527_joxpk8qhtb0m5cdi.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/animate.min.css" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/webliu.css">

@@ -2216,7 +2216,7 @@ input:focus {
 .theme-intro {
 	background: #fff;
 	text-align: center;
-	padding: 30px 0
+	padding: 30px;
 }
 .theme-introTitle {
 	font-size: 48px;
@@ -2240,19 +2240,81 @@ input:focus {
 }
 .theme-intro img{
 	max-width: 100%;
+	height: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.webliu-service,
+.webliu-contactNow  {
+	background: #62a8ea;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+	clear: both;
+}
+.webliu-service .title,
+.webliu-afterSale .title {
+	color: #fff;
+	margin-bottom: 20px;
+	font-weight: lighter;
+}
+.webliu-service .title-subtitle,
+.webliu-afterSale .title-subtitle {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+.service-item {
+	text-align: center;
+}
+.webliu-service i,
+.webliu-afterSale i {
+	display: block;
+	background: #fff;
+	border-radius: 50%;
+	font-size: 50px;
+	color: #62a8ea;
+	margin: 20px auto;
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+	transition: all .3s ease-in-out;
+}
+.webliu-service i:hover {
+	color: #000;
+}
+.service-item h3 {
+	color: #fff;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.webliu-afterSale {
+	background: #fff;
+	padding: 120px 0;
+	text-align: center;
+	color: #5e7387;
+	box-sizing: border-box;
+	clear: both;
+}
+.webliu-afterSale .title {
+	color: #5e7387;
+}
+.webliu-afterSale h3 {
+	color: #5e7387;
+}
+.webliu-afterSale i {
+	background: #eee;
+	color: #5e7387;
+}
+.webliu-afterSale i:hover {
+	color: #62a8ea;
+}
+.webliu-position {
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+.webliu-position iframe {
+	width: 100%;
+	height: 100%;
+}
 
 
 
