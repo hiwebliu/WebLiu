@@ -1,6 +1,16 @@
 <?php get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<style media="screen">
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 4px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #333;
+	}
+	</style>
 	<div class="wrapper">
 		<section class="article_wrapper">
 			<div class="container">

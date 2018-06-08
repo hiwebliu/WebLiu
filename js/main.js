@@ -62,6 +62,7 @@ var setCourseHeight = function() {
 
 $(function(){
 	$('.wow').removeClass('showlater');
+	$('.wow').css('display','block');
 	scrollEffect();
 	soicalColor();
 	setCourseHeight();
@@ -110,10 +111,5 @@ $(function(){
 	live: true
 	});
 	wow.init();
-
-
-
-
-
 
 });
