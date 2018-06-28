@@ -1,7 +1,10 @@
 <?php
 if ( in_category('valuetheme') ) {
 	get_template_part('single_ValueTheme' );
-}else {
+}else if (in_category('myworks')) {
+	get_template_part('single_MyWorks' );
+}
+else {
 	get_template_part('single_default' );
 }
 ?>

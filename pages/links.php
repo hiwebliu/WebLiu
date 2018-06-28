@@ -1,11 +1,10 @@
 <?php
 /*
 	template name: 友情链接
-	description: WPOne主题友情链接页面
 */
 get_header();?>
 <div class="container">
-<div class="pagewrapper cl">
+<div class="pagewrapper">
 	<aside class="pagesidebar">
 		<ul class="pagesider-menu">
 		<?php
@@ -15,7 +14,7 @@ get_header();?>
 	</aside>
 	<div class="pagecontent">
 	<div class="page_mainbox">
-		<header class="pageheader cl">
+		<header class="pageheader">
 			<h1 class="page_title">
 				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 			</h1>
@@ -27,7 +26,7 @@ get_header();?>
 			<?php
 			$bookmarks = get_bookmarks();
 			if ( !empty($bookmarks) ){
-			    echo '<ul class="link-content cl">';
+			    echo '<ul class="link-content">';
 			    foreach ($bookmarks as $bookmark) {
 			        echo '<li><a href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" ><img src="' . $bookmark->link_url . '/favicon.ico"/><span class="sitename">'. $bookmark->link_name .'</span></a></li>';
 			    }

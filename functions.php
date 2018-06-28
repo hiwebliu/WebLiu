@@ -886,12 +886,15 @@ function webliubtn_orange($atts, $content=null, $code="")
 }
 add_shortcode('btn_orange','webliubtn_orange');
 
-
-
-
-
-
-
+// 添加编辑器内自定义按钮
+function appthemes_add_quicktags() {
+?>
+<script type="text/javascript">
+QTags.addButton( '按钮组', '按钮组', '\n<a href="#" class="webliubtn" target="_blank">默认按钮</a> <a href="#" class="btnblue webliubtn" target="_blank">蓝色按钮</a> <a href="#" class="btngreen webliubtn" target="_blank">绿色按钮</a> <a href="#" class="btnpink webliubtn" target="_blank">红色按钮</a> <a href="#" class="btnorange webliubtn" target="_blank">黄色按钮</a> <a href="#" class="btndark webliubtn" target="_blank">黑色按钮</a>' );
+</script>
+<?php
+}
+add_action('admin_print_footer_scripts', 'appthemes_add_quicktags' );
 
 
 // 去除Category

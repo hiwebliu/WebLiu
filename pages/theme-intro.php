@@ -7,7 +7,7 @@ get_header();
 ?>
 	<div class="wrapper">
 
-		<div class="col-xs-12 theme-intro">
+		<div class="theme-intro">
 			<h1 class="theme-introTitle wow fadeInUp"><?php the_title(); ?></h1>
 			<?php while (have_posts()) : the_post(); ?>
                 <div class=" wow fadeInUp">

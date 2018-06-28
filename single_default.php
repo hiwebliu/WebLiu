@@ -1,6 +1,16 @@
 <?php get_template_part('header-index'); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<style media="screen">
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 4px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #333;
+	}
+	</style>
 	<div class="single_TopWrap">
 	<div class="singlergba">
 

@@ -1,11 +1,10 @@
 <?php
 /*
     template name: 文章存档
-    description: WPOne主题文章存档页面
 */
 get_header();?>
 <div class="container">
-<div class="pagewrapper cl">
+<div class="pagewrapper">
     <aside class="pagesidebar">
         <ul class="pagesider-menu">
         <?php
@@ -15,13 +14,13 @@ get_header();?>
     </aside>
     <div class="pagecontent">
     <div class="page_mainbox">
-        <header class="pageheader cl">
+        <header class="pageheader">
             <h1 class="page_title">
                 <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </h1>
         </header>
         <?php while (have_posts()) : the_post(); ?>
-            <article class="article-content">
+            <article class="article-content page-category">
                 <?php the_content(); ?>
                 <?php zww_archives_list(); ?>
             </article>
