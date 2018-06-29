@@ -1690,24 +1690,15 @@ input:focus {
     text-align: right;
     margin-right: 30px;
 }
-.pagecontent {
-	flex: auto;
-	width: 100%;
-	overflow: hidden;
-}
 .pagesider-menu li {
 	padding: 15px 30px 15px 0;
 	border-right: 2px solid #eaeaea;
 }
-.pagesider-menu li a {
-	color: #999;
-}
 .pagesider-menu li.current-menu-item {
-	border-right: 2px solid #555;
+	border-right: 2px solid #ed1c24;
 }
 .pagesider-menu li.current-menu-item a {
-	color: #555;
-	font-weight: bold;
+	color: #ed1c24;
 }
 .page_title {
 	text-align: center;
