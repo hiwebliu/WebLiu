@@ -270,7 +270,7 @@
 .wrap {
     width: 90%;
     margin: 50px auto 10px;
-    font-family: "微软雅黑";	
+    font-family: "微软雅黑";
 }
 .nav-tab-wrapper, .wrap h2.nav-tab-wrapper, h1.nav-tab-wrapper {
     float: left;
@@ -327,8 +327,8 @@
     min-width: 255px;
     min-height: 600px;
     border: 1px solid #e5e5e5;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04); 
-    box-shadow: 0 1px 1px rgba(0,0,0,.04); 
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
     background: #fff;
 }
 .postbox, .stuffbox {
@@ -360,4 +360,16 @@
 	width: 100%;
 	border:2px solid green;
 	z-index: 999;
+}
+#section-about-themewebliu .option,
+#section-about-themewebliu .explain {
+	width: 100% !important;
+    max-width: 100% !important;
+    font-size: 14px !important;
+    line-height: 30px !important;
+}
+#section-about-themewebliu .explain a {
+	padding: 0 10px !important;
+    font-size: 12px !important;
+    margin-left: 10px !important;
 }

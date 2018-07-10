@@ -60,10 +60,7 @@
 			</article>
 		</div>
 	</div>
-	<!-- <div class="webliu-position">
-		<iframe src="<?php echo get_stylesheet_directory_uri() ?>/myposition.html"></iframe>
 
-	</div> -->
 </div><!--wrapper end-->
 
 <?php get_footer(); ?>

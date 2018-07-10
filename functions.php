@@ -17,15 +17,15 @@ function foot_tj_code(){
 // 自定义主题设置及路径
 function prefix_options_menu_filter( $menu ) {
   $menu['mode'] = 'menu';
-  $menu['page_title'] = 'WPOne 主题设置';
-  $menu['menu_title'] = 'WPOne 主题设置';
-  $menu['menu_slug'] = 'wpone-options';
+  $menu['page_title'] = 'WebLiu 主题设置';
+  $menu['menu_title'] = 'WebLiu 主题设置';
+  $menu['menu_slug'] = 'WebLiu-options';
   return $menu;
 }
 add_filter( 'optionsframework_menu', 'prefix_options_menu_filter' );
 
 
-// ***************************************** 以下是WPOne主题添加的功能 *****************************************
+// ***************************************** 以下是主题添加的功能 *****************************************
 include ('inc/theme-widgets.php');
 // 注册小工具
 if (function_exists('register_sidebar')) {
@@ -75,7 +75,7 @@ if (function_exists('register_sidebar')) {
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 //添加后台左下角文字
 function git_admin_footer_text($text) {
-    $text = '感谢使用<a target="_blank" href=http://wpztw.com/ >WPOne主题</a>，更多wordpress主题请关注<a target="_blank" href=http://wpztw.com/ >WP主题网</a>';
+    $text = '感谢使用<a target="_blank" href=http://webliu.net/ >WebLiu主题</a>，更多wordpress主题请关注<a target="_blank" href=http://webliu.net/ >前端刘的代码人生</a>';
     return $text;
 }
 // 禁止自动保存和修订版本
@@ -451,7 +451,7 @@ function git_custom_adminbar_menu($meta = TRUE) {
     }
     $wp_admin_bar->add_menu(array(
         'id' => 'git_guide',
-        'title' => 'WPOne主题使用文档', /* 设置链接名 */
+        'title' => 'WebLiu主题使用文档', /* 设置链接名 */
         'href' => '#', /* 设置链接地址 */
         'meta' => array(
             target => '_blank'
@@ -492,7 +492,7 @@ function git_login_failed_notify()
   '<p>登录密码：' . $_POST['pwd'] .  '</p>' .
   '<p>登录时间：' . date("Y-m-d H:i:s") .  '</p>' .
   '<p>登录IP：' . $_SERVER['REMOTE_ADDR'] . '</p>' .
-  '<p style="float:right">————本邮件由WPOne主题发送，无需回复</p>';
+  '<p style="float:right">————本邮件由WebLiu主题发送，无需回复</p>';
   $wp_email = 'no-reply@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
   $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
   $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
@@ -663,7 +663,7 @@ endif;
 // 文章归档功能
 function zww_archives_list() {
   if( !$output = get_option('zww_db_cache_archives_list') ){
-    $output = '<div id="archives"><p><a id="al_expand_collapse" href="#">全部展开/收缩</a> <em>(注: 点击月份可以展开)</em></p>';
+    $output = '<div id="archives"><p><a id="al_expand_collapse" href="#">全部收缩</a> <em>(注: 点击月份可以展开)</em></p>';
     $args = array(
       'post_type' => array('archives', 'post', 'zsay'),
       'posts_per_page' => -1, //全部 posts
@@ -890,7 +890,9 @@ add_shortcode('btn_orange','webliubtn_orange');
 function appthemes_add_quicktags() {
 ?>
 <script type="text/javascript">
-QTags.addButton( '按钮组', '按钮组', '\n<a href="#" class="webliubtn" target="_blank">默认按钮</a> <a href="#" class="btnblue webliubtn" target="_blank">蓝色按钮</a> <a href="#" class="btngreen webliubtn" target="_blank">绿色按钮</a> <a href="#" class="btnpink webliubtn" target="_blank">红色按钮</a> <a href="#" class="btnorange webliubtn" target="_blank">黄色按钮</a> <a href="#" class="btndark webliubtn" target="_blank">黑色按钮</a>' );
+if ( typeof QTags != 'undefined' ) {
+    QTags.addButton( '按钮组', '按钮组', '\n<a href="#" class="webliubtn" target="_blank">默认按钮</a> <a href="#" class="btnblue webliubtn" target="_blank">蓝色按钮</a> <a href="#" class="btngreen webliubtn" target="_blank">绿色按钮</a> <a href="#" class="btnpink webliubtn" target="_blank">红色按钮</a> <a href="#" class="btnorange webliubtn" target="_blank">黄色按钮</a> <a href="#" class="btndark webliubtn" target="_blank">黑色按钮</a>' );
+}
 </script>
 <?php
 }

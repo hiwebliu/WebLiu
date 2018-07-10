@@ -3,7 +3,7 @@
 	Author：前端刘
 	Description：webliu.net前端刘的代码人生
 	主题色调：
-	#f7f7f7 body背景色
+	#f6f6f6 body背景色
 	#62a8ea 蓝色
 	#ed1c24 红色
 	#555555 黑色
@@ -23,7 +23,7 @@ body{
 	font-family: "Open Sans","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Verdana,Tahoma,sans-serif;
 	color:#555;
 	margin:0;
-	background:#f4f7f9;
+	background:#f6f6f6;
 	position: relative;
 }
 .clear {
@@ -184,7 +184,14 @@ input:focus {
     padding: 10px 13px;
     background-color: rgba(0,0,0,.9);
 }
-
+blockquote {
+	font-size: 14px;
+    padding: 10px;
+    border: 0;
+    background: #f4f4f4;
+    color: #555;
+    border-radius: 5px;
+}
 
 
 .header {
@@ -312,7 +319,7 @@ input:focus {
 }
 .header .sub-menu>li {
 	display: block;
-	padding: 5px 35px;
+	padding: 10px 35px;
 	border-bottom: 1px solid #f4f4f4;
 	text-align: left;
 }
@@ -664,7 +671,6 @@ input:focus {
 /*首页最新主题*/
 .new_theme {
 	width: 100%;
-    background-color: #f1f1f1;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -1184,7 +1190,7 @@ input:focus {
     background-color: #fff;
     margin-bottom: 30px;
     padding: 20px;
-    color: #555;
+    color: #333;
     border: 1px solid #eee;
 }
 .article_item h3 {
@@ -1242,10 +1248,10 @@ input:focus {
 	font-size: 20px;
 }
 .article_content h3 {
-    background: #f4f7f9;
-    padding: 10px;
+	padding: 10px 20px;
     margin: 15px -20px;
-	font-size: 18px;
+    font-size: 18px;
+    color: #000;
 }
 .article_content li {
 	line-height: 20px;
@@ -1343,23 +1349,23 @@ input:focus {
 	border-bottom: 1px solid #eaeaea;
 }
 .post_copyright {
-  background-color: #eee;
-  border-radius: 3px;
-  text-align: justify;
+	background-color: #eee;
+	border-radius: 3px;
+	text-align: justify;
 	margin-top: 20px;
 	padding: 10px;
 	-webkit-transition: all .8s ease;
-	 -o-transition: all .8s ease;
-		transition: all .8s ease;
+	-o-transition: all .8s ease;
+	transition: all .8s ease;
 }
 .post_copyright p {
-	font-size: 12px;
-	color: #999;
+	font-size: 14px;
+	color: #333;
 	line-height: 20px;
 	margin-bottom: 0;
 }
 .post_copyright a {
-  color: #999;
+  color: #333;
   text-decoration: underline !important;
   margin-left: 4px;
   line-height: 24px;
@@ -1690,6 +1696,9 @@ input:focus {
     text-align: right;
     margin-right: 30px;
 }
+.pagecontent {
+	flex: auto;
+}
 .pagesider-menu li {
 	padding: 15px 30px 15px 0;
 	border-right: 2px solid #eaeaea;
@@ -1717,10 +1726,6 @@ input:focus {
 }
 .pagewrapper .article-content ol li {
 	list-style-type: decimal;
-	list-style-position: inside;
-}
-.pagewrapper .article-content ul li {
-	list-style-type: circle;
 	list-style-position: inside;
 }
 .pagewrapper .article-content li {
@@ -1808,6 +1813,42 @@ input:focus {
     margin-left: -12px;
 }
 
+/* 文章归档 */
+.page-category em {
+	font-style: normal;
+    color: #999;
+    font-size: 14px;
+}
+.page-category h3 {
+	margin: 10px 0;
+}
+.page-category .al_mon_list {
+	margin: 15px 0;
+}
+.page-category .al_mon {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.page-category .al_post_list {
+	/* display: none; */
+	margin-left: 20px;
+}
+.page-category .al_year {
+	border-bottom: 1px solid #eaeaea;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.page-category .al_year em {
+	font-weight: normal;
+}
+.page-category .al_mon_list:first-child {
+	display: block;
+	border: 1px solid #f00;
+}
+
+
 
 /* 错误页面 */
 .f404 {
@@ -1874,6 +1915,7 @@ input:focus {
 	float: left;
 	width: 50%;
 	border-top: 1px solid #eaeaea;
+	padding: 5px 0;
 }
 .user_sidebar .postNum {
 	border-right: 1px solid #eaeaea;
@@ -1885,8 +1927,6 @@ input:focus {
 .user_sidebar .user_num {
 	width: 100%;
 	overflow: hidden;
-	padding-bottom: 6px;
-	background: #f8f8f8;
 }
 .user_sidebar .user_num em {
 	display: block;
@@ -1982,8 +2022,8 @@ input:focus {
 .widget_search .screen-reader-text {display: none;}
 .subscribe .rsstxt, .widget_search #s {
 	border: 1px solid #ddd;
-	padding: 4px 50px 4px 10px;
-	border-radius: 3px;
+    padding: 4px 6px 4px 10px;
+    border-radius: 3px;
 }
 .subscribe .btn, .widget_search #searchsubmit {
 	box-shadow: none;
@@ -1995,7 +2035,10 @@ input:focus {
 	border: 0;
 	cursor: pointer;
 	position: absolute;
-	right: 0px;
+	right: 20px;
+}
+.subscribe .btn {
+	right: 0;
 }
 .widget_search #searchsubmit {margin-left: -4px;}
 .subscribe .btn:hover, .subscribe .btn:focus, .widget_search #searchsubmit:hover, .widget_search #searchsubmit:focus {
@@ -2124,28 +2167,8 @@ input:focus {
     width: 160px;
     font-size: 12px;
     text-align: justify;
-    max-height: 85px;
+    max-height: 79px;
     overflow: hidden;
-}
-.widget_comment div.content:before {
-/*  content: '';
-  display: inline-block;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-right: 9px solid #eee;
-  position: absolute;
-  top: 15px;
-  left: -9px;*/
-}
-.widget_comment div.content:after {
-/*  content: '';
-  display: inline-block;
-  border-top: 7px solid transparent;
-  border-bottom: 7px solid transparent;
-  border-right: 7px solid #fbfdfb;
-  position: absolute;
-  top: 17px;
-  left: -7px;*/
 }
 .widget_comment div.content i {
   font-style: normal;
@@ -2261,6 +2284,7 @@ input:focus {
 }
 .post-abstract .note {
 	color: #999;
+	line-height: 30px;
 }
 .article .post_meta {
 	padding: 10px 20px;
@@ -2288,6 +2312,7 @@ input:focus {
 .page_navi {
 	margin-top: 30px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 .page_navi a {
 	display: inline-block;
@@ -2438,7 +2463,17 @@ input:focus {
 .wow {
 	display: none;
 }
-
+/* 默认侧边栏样式 */
+.widget_recent_entries ul li,
+.widget_recent_comments ul li,
+.widget_archive ul li {
+	list-style: circle;
+    list-style-position: inside;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+}
 
 
 
