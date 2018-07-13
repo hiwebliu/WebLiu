@@ -59,7 +59,6 @@ var setCourseHeight = function() {
 	}
 };
 
-
 $(function(){
 	$('.wow').removeClass('showlater');
 	$('.wow').css('display','block');
@@ -82,7 +81,7 @@ $(function(){
 			$('body').css('overflow-y','hidden');
 		});
 	});
-	$('.search_close .fa').click(function(){
+	$('.search_close').click(function(){
 		$('.search_wrap').hide(300);
 		$('body').css('overflow-y','auto');
 
@@ -112,4 +111,17 @@ $(function(){
 	});
 	wow.init();
 
+	// 文章归档列表收起展开
+	$('.al_mon').click(function(){
+		let shows = $('+' + '.al_post_list',this).css('display');
+		if (shows == 'none') {
+			$('+' + '.al_post_list',this).show(500);
+		}else {
+			$('+' + '.al_post_list',this).hide(500);
+		}
+	});
+
+	$('#al_expand_collapse').click(function(){
+		$('#archives .al_post_list').hide(500);
+	});
 });

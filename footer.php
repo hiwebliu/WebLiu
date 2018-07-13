@@ -18,17 +18,24 @@
 	<!-- The Search -->
 	<div class="search_wrap">
 		<div class="search_content">
-			<section class="search_title">
-				<i class="fa fa-search"></i>少说话，多动手
-			</section>
 			<section class="search_form">
-				<form id="NewsSearchForm" name="NewsSearchForm" method="get" action="" target="_blank">
-					<input name="q" type="text" placeholder="请输入关键字"> <input type="hidden" name="s">
-					<button class="btn btn-default" type="button">搜索</button>
+				<form id="NewsSearchForm" name="NewsSearchForm" method="get"  action="<?php echo home_url( '/' ); ?>" target="_blank">
+					<input class="searchInput" name="s" type="text" placeholder="请输入关键字">
+					<input class="searchButton" type="submit" value="搜索" />
 				</form>
 			</section>
+			<section>
+				<ul>
+					<?php
+					$args = array( 'numberposts' => 10, 'orderby' => 'rand', 'post_status' => 'publish' );
+					$rand_posts = get_posts( $args );
+					foreach( $rand_posts as $post ) : ?>
+					    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<?php endforeach; ?>
+					</ul>
+			</section>
 		</div>
-		<div class="search_close"><i class="fa fa-remove"  data-toggle="tooltip" title="关闭"></i></div>
+		<div class="search_close"><i class="iconfont icon-close" data-toggle="tooltip" title="关闭"></i></div>
 	</div>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri() ?>/js/bootstrap.min.js"></script>

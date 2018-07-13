@@ -9,7 +9,7 @@
 	<meta http-equiv="Cache-Control" content="no-siteapp">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/reset.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//at.alicdn.com/t/font_653527_joxpk8qhtb0m5cdi.css">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_653527_51c679ohti4.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/animate.min.css" />
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/css/webliu.css">
@@ -27,7 +27,7 @@
 			</section>
 			<section class="search_show">
 				<a href="javascript:;" class="">
-					<i class="fa fa-search" data-toggle="tooltip" title="搜索"></i>
+					<i class="iconfont icon-search" data-toggle="tooltip" title="搜索"></i>
 				</a>
 			</section>
 			<section class="site_nav">

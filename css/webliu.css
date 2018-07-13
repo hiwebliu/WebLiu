@@ -330,7 +330,7 @@ blockquote {
 /* 搜索 */
 .search_show {
 	float: right;
-	margin-top: 10px;
+	margin-top: 4px;
 }
 .search_show a {
     padding: 15px 20px;
@@ -373,19 +373,19 @@ blockquote {
 .search_content .search_form {
 	width: 100%;
 }
-.search_content .search_form input {
+.search_content .search_form .searchInput {
 	width: 85%;
 	border: 1px solid #ccc;
 	height: 40px;
-	padding: 20px;
+	padding: 20px 0;
 }
 .search_content .search_form input:focus {
 	border-color: #ff6400;
 }
-.search_content .search_form button {
+.search_content .search_form .searchButton {
 	float: right;
 	width: 15%;
-	height: 42px;
+	height: 41px;
 	border: 1px solid #ccc;
 	border-left: 0;
 	border-radius: 0;
@@ -2474,8 +2474,15 @@ blockquote {
     width: 100%;
     overflow: hidden;
 }
-
-
+.searchKey {
+	font-weight: normal;
+	color: #ff6400;
+	margin-right: 10px;
+}
+.cat-search-title {
+	font-size: 18px;
+    padding: 10px 0;
+}
 
 
 
@@ -2663,7 +2670,7 @@ blockquote {
 		padding-top: 4px;
 	}
 	.search_show {
-		margin-top: -6px;
+		margin-top: -12px;
 	}
 	.search_show a {
 		color: #555;
@@ -2702,6 +2709,9 @@ blockquote {
 		flex: 1 1 100%;
 		margin-right: 0;
 		margin-bottom: 10px;
+	}
+	.notindex .header {
+		background: #fff;
 	}
 }
 
@@ -2788,9 +2798,6 @@ blockquote {
 	}
 	.sidebar {
 		display: none;
-	}
-	.notindex .header {
-		background: #fff;
 	}
 	.notindex .header .logopng {
 		display: none !important;

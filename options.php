@@ -27,13 +27,6 @@ update_option( 'optionsframework', $optionsframework_settings );
 
 function optionsframework_options() {
 
-$avater_style = array(
-	'1' => '原有方式',
-	'2' => '从多说服务器获取',
-	'3' => '从七牛服务器获取',
-	'4' => '本地缓存',
-);
-
 
 // 背景默认值
 $background_defaults = array(
@@ -86,7 +79,7 @@ $imagepath =  get_template_directory_uri() . '/images/';
 
 $options = array();
 
-// ************************************* 从这里开始WPOne主题的设置选项 *************************************
+// ************************************* 从这里开始主题的设置选项 *************************************
 // 常规设置
 $options[] = array(
     'name' => '基本设置',
@@ -457,14 +450,14 @@ $options[] = array(
     'name'=>'网站关键字',
     'desc'=>'关键字有利于SEO优化，建议个数在5-10之间，用英文逗号隔开',
     'id'=>'keywords',
-    'std'=>'wpztw.com,WPOne主题',
+    'std'=>'前端刘,webliu.net,webliu主题',
     'type'=>"textarea"
 );
 $options[] = array(
 	'name'=>'网站描述',
     'desc'=>'描述有利于SEO优化，建议字数在30-70之间',
     'id'=>'description',
-    'std'=>'WPOne主题由WP主题网（wpztw.com）设计开发，更多原创wordpress主题，请关注WP主题网。',
+    'std'=>'webliu.net-前端刘的代码人生',
     'type'=>"textarea"
 );
 $options[] = array(
@@ -555,34 +548,6 @@ $options[] = array(
     'type' => 'checkbox',
 );
 $options[] = array(
-	'desc' =>'文章百度收录查询(开启此功能，<em>未收录的页面加载时间增加0.5s-1s左右</em>)',
-	'id' => 'baidu_record',
-	'std' => '0',
-	'type' => 'checkbox',
-);
-$options[] = array(
-    'name'=>'百度口碑(或自定义链接)',
-    'type'=>"subtitle"
-);
-$options[] = array(
-    'id' => 'post_koubei_open',
-    'desc' => '启用',
-    'std' => '1',
-    'type' => 'checkbox',
-);
-$options[] = array(
-    'id' => 'post_koubei_t',
-    'desc' => '自定义链接标题',
-    'std' => '百度口碑',
-    'type' => 'text',
-);
-$options[] = array(
-    'id' => 'post_koubei_l',
-    'desc' => '自定义链接',
-    'std' => 'https://koubei.baidu.com/',
-    'type' => 'text',
-);
-$options[] = array(
     'name'=>'文章打赏功能',
     'type'=>"subtitle"
 );
@@ -662,7 +627,7 @@ $options[] = array(
     'name'=>'站长昵称',
     'desc'=>'站长在页面中显示的昵称',
     'id'=>'social_name',
-    'std'=>'WP主题',
+    'std'=>'前端刘',
     'type'=>"text"
 );
 $options[] = array(
@@ -777,7 +742,7 @@ $options[] = array(
     'type'=>"subtitle"
 );
 $options[] = array(
-    'desc'=>'说明：<em>此选项默认不用修改</em>主题集成timthumb和七牛自动缩略图功能,若安装了七牛cdn插件并开启自动缩略图功能,则首选七牛;若未安装插件,则启用timthumb功能并将图片自动裁剪,尺寸220*150 <a>相关教程</a>',
+    'desc'=>'说明：<em>此选项默认不用修改</em>主题集成timthumb和七牛自动缩略图功能,若安装了七牛cdn插件并开启自动缩略图功能,则首选七牛;若未安装插件,则启用timthumb功能并将图片自动裁剪',
     'id'=>'dadf',
     'std'=>'1',
     'type'=>'checkbox',
@@ -831,26 +796,6 @@ $options[] = array(
     'std'=>'0',
     'type'=>"checkbox"
 );
-$options[] =  array(
-	'name'=>'侧栏跟随',
-	'type'=>'heading',
-);
-$options[] = array(
-	'name'=>'首页',
-    'type'=>"subtitle"
-);
-$options[] = array(
-    'desc'=>'启用',
-    'id'=>'index_follow_open',
-    'std'=>'0',
-    'type'=>"checkbox"
-);
-$options[] = array(
-    'desc'=>'设置随动模块，多个模块之间用空格隔开即可！默认：“1 2”，表示第1和第2个模块，建议最多3个模块',
-    'id'=>'index_follow_one',
-    'class'=>'mini',
-    'type'=>"text"
-);
 // 关于主题
 $options[] =  array(
 	'name'=>'关于主题',
@@ -858,10 +803,9 @@ $options[] =  array(
 );
 $options[] = array(
 	'type'=>'title',
-	'desc'=>'<div class="xxx">此主题是由 <b>前端刘(webliu.net)</b> 设计开发的，使用主题前，请详细阅读本主题的使用说明！</div>',
-	'id'=>'aaaa',
+	'desc'=>'此主题是由 <b>前端刘(webliu.net)</b> 设计开发，本主题为免费共享博客主题，源码已托管到GitHub，使用主题前，请详细阅读本主题的使用说明！若主题出现bug，可以加群一起交流。QQ群：<b>101810056</b>   <a href="https://github.com/hiwebliu/WebLiu" target="_blank">源码下载</a>',
+	'id'=>'about-themeWebLiu',
 );
-
 
 return $options;
 }
