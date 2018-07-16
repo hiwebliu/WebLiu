@@ -46,19 +46,9 @@
 		<div class="search_content">
 			<section class="search_form">
 				<form id="NewsSearchForm" name="NewsSearchForm" method="get"  action="<?php echo home_url( '/' ); ?>" target="_blank">
-					<input class="searchInput" name="s" type="text" placeholder="请输入关键字">
-					<input class="searchButton" type="submit" value="搜索" />
+					<input class="searchInput" name="s" type="text" placeholder="请输入关键字" required>
+					<button type="submit" class="searchButton"><i class="iconfont icon-search" data-toggle="tooltip" title="搜索"></i></button>
 				</form>
-			</section>
-			<section>
-				<ul>
-					<?php
-					$args = array( 'numberposts' => 10, 'orderby' => 'rand', 'post_status' => 'publish' );
-					$rand_posts = get_posts( $args );
-					foreach( $rand_posts as $post ) : ?>
-					    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endforeach; ?>
-					</ul>
 			</section>
 		</div>
 		<div class="search_close"><i class="iconfont icon-close" data-toggle="tooltip" title="关闭"></i></div>

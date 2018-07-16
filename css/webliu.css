@@ -350,7 +350,7 @@ blockquote {
 	left: 0;
 	right: 0;
 	z-index: 9999;
-	background: #fff;
+	background: rgba(0,0,0,.75);
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
@@ -367,53 +367,71 @@ blockquote {
 }
 .search_content {
 	width: 60vw;
-	height: 90vh;
-	margin: 10vh auto 0;
+    height: 20vh;
+    margin: 35vh auto;
+    background: #fff;
+    border-radius: 5px;
 }
 .search_content .search_form {
 	width: 100%;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 10px 8px 10px #000;
+}
+.search_content .search_form form {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	flex: 0 0 80%;
 }
 .search_content .search_form .searchInput {
-	width: 85%;
-	border: 1px solid #ccc;
-	height: 40px;
-	padding: 20px 0;
+	flex: auto;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    height: 40px;
+    padding: 20px 0;
+}
+.searchInput::-webkit-input-placeholder {
+	font-size: 20px;
 }
 .search_content .search_form input:focus {
-	border-color: #ff6400;
+	background: transparent;
 }
 .search_content .search_form .searchButton {
-	float: right;
-	width: 15%;
+	flex: 0 0 40px;
 	height: 41px;
-	border: 1px solid #ccc;
-	border-left: 0;
-	border-radius: 0;
+	border: 0;
+	background: transparent;
 	-moz-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	-webkit-transition: all .3s ease;
 	-ms-transition: all .3s ease;
 	transition: all .3s ease;
+	margin: -10px 0 0 -40px;
+	outline:none;
 }
-.search_content .search_form button:hover {
-	background: #ff6400;
-	color: #343233;
-	border-color: #ff6400;
+.search_content .search_form .searchButton i {
+	font-size: 24px;
 }
+.search_content .search_form button:hover i {
+	color: #ff6400;
+}
+
 .search_close {
 	position: absolute;
 	z-index: 9999;
 	top: 10vh;
 	right: 10vw;
-	width: 40px;
+	width: 60px;
+	cursor: pointer;
 }
-.search_close .fa {
+.search_close i {
 	font-size: 24px;
 	color: #999;
 	cursor: pointer;
-}
-.search_close .fa:hover {
-	color: #000;
 }
 /*视觉差背景*/
 .visual {
@@ -1173,7 +1191,7 @@ blockquote {
 	color: #999;
 }
 .breadcrumb a:hover {
-	color: #fec030;
+	color: #ff6400;
 }
 .article_wrapper {
 	position: relative;
@@ -1219,7 +1237,6 @@ blockquote {
 	line-height: 30px;
 	text-align: justify;
 	margin-bottom: 20px;
-	font-weight: 300;
 }
 .article_content img {
 	max-width: 100%;
@@ -1832,8 +1849,20 @@ blockquote {
 	cursor: pointer;
 }
 .page-category .al_post_list {
-	/* display: none; */
 	margin-left: 20px;
+}
+.page-category .al_post_list li {
+    color: #999;
+    list-style: disc;
+    list-style-position: inside;
+}
+.page-category .al_post_list li a {
+	color: #999;
+}
+.page-category .al_post_list li:hover,
+.page-category .al_post_list li:hover a,
+.page-category .al_post_list li a:hover {
+	color: #ff6400;
 }
 .page-category .al_year {
 	border-bottom: 1px solid #eaeaea;
@@ -2483,8 +2512,12 @@ blockquote {
 	font-size: 18px;
     padding: 10px 0;
 }
-
-
+.search_radomArticle li {
+	margin: 10px 0;
+}
+.search_radomArticle li a {
+	font-size: 14px;
+}
 
 
 

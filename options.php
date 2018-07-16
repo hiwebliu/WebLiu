@@ -378,8 +378,8 @@ $options[] = array(
 );
 // 首页两列文章列表设置
 $options[] = array(
-    'name'=>'首页两列文章列表设置',
-    'desc'=>'左侧列表分类ID，请参照顶部【您网站所有分类及ID】',
+    'name'=>'首页两列文章列表设置,分类ID请参照顶部【您网站所有分类及ID】',
+    'desc'=>'左侧列表分类ID，若为空则显示最新文章',
     'id'=>'course_catleft',
     'std'=>'1',
     'type'=>"text"

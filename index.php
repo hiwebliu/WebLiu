@@ -85,9 +85,14 @@
 					<?php
 						$catleftid = webliu_option('course_catleft');
 						$catnum = webliu_option('course_catnum');
-						echo get_cat_name( $catleftid );
+						if ($catleftid < 1) {
+							echo "最新文章";
+						}else {
+							echo get_cat_name( $catleftid );
+						}
 					?>
 				</header>
+
 				<ul>
 				<?php
 					query_posts( array( 'cat'=>$catleftid, 'posts_per_page'=>$catnum, 'ignore_sticky_posts'=>true ) );
