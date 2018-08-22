@@ -36,7 +36,7 @@
 	<div class="container">
 		<h1 class="wow bounceInUp">网站制作 / Wordpress主题定制</h1>
 		<p class="wow bounceInLeft">我们不做收费主题，因为我们始终贯彻<em>开源、免费、共享</em>的原则。</p>
-		<p class="wow bounceInLeft">我们提供主题定制，给您一份只属于您自己的设计。</p>
+		<p class="wow bounceInLeft">项目合作流程（以下标价仅作为标准，实际报价将以项目实际工作量而定）</p>
 		<section class="target_one wow bounceIn" data-wow-duration="2s">
 			<i class="fa fa-pencil-square-o"></i>
 			<h2>Ui设计</h2>
@@ -52,24 +52,24 @@
 		<section class="target_one wow bounceIn"  data-wow-duration="2.5">
 			<i class="fa fa-wordpress"></i>
 			<h2>主题定制</h2>
-			<p>我们有多名优秀、具有成熟经验的设计师，可为您打造专属Ui设计。</p>
+			<p>找不到合适的主题？联系我们，定制一份专属于您自己的设计，可获得私有设计、产品源代码。</p>
 			<p class="target_price">3288 + 元/套</p>
 			<ul>
-				<li>明确您的设计需求(Logo / 页面设计)</li>
-				<li>提供多种设计方案</li>
-				<li>超长售后期限：1年</li>
+				<li>1.客户提供网站布局草图或页面元素需求</li>
+				<li>2.团队设计页面psd及产品框架</li>
+				<li>3.psd转WP主题</li>
 			</ul>
 			<button class="btn btn-danger">了解详情</button>
 		</section>
 		<section class="target_one wow bounceIn" data-wow-duration="3s">
 			<i class="fa fa-internet-explorer"></i>
 			<h2>仿站需求</h2>
-			<p>我们有多名优秀、具有成熟经验的设计师，可为您打造专属Ui设计。</p>
-			<p class="target_price">2288 元/套</p>
+			<p>忠于某个网站的元素设计或后台功能？联系我们，完美还原目标站点的所有元素及功能。</p>
+			<p class="target_price">2288 + 元/套</p>
 			<ul>
-				<li>明确您的设计需求(Logo / 页面设计)</li>
-				<li>提供多种设计方案</li>
-				<li>超长售后期限：1年</li>
+				<li>1.客户提供目标站点及特殊后台功能需求</li>
+				<li>2.团队进行静态页面制作</li>
+				<li>3.html转WP主题</li>
 			</ul>
 			<button class="btn btn-danger">了解详情</button>
 		</section>

@@ -89,14 +89,14 @@ $options[] = array(
     'name'=>'网站Logo',
     'desc'=>'可以直接替换主题img目录下的logo.png，也可上传。最大尺寸：180px * 32px; 格式：.png',
     'id'=>'site_logo',
-    'std'=>'http://s.wpztw.com/wp-content/uploads/2016/11/logo.png',
+    'std'=>''.get_template_directory_uri().'/img/logo.png',
     'type'=>"upload"
 );
 $options[] = array(
     'name'=>'网站滚动logo',
     'desc'=>'页面滚动时显示的logo，建议尺寸同上。',
     'id'=>'site_logo1',
-    'std'=>'http://s.wpztw.com/wp-content/uploads/2016/11/logo.gif',
+		'std'=>''.get_template_directory_uri().'/img/logo-dark.png',
     'type'=>"upload"
 );
 $options[] = array(
@@ -106,18 +106,18 @@ $options[] = array(
     'std'=>'',
     'type'=>"upload"
 );
-$options[] = array(
-    'name'=>'首页公告',
-    'desc'=>'只在首页展示，支持Html代码，比如[a]链接',
-    'id'=>'site_notices',
-    'std'=>'输入您的网站公告...',
-    'type'=>"textarea"
-);
+// $options[] = array(
+//     'name'=>'首页公告',
+//     'desc'=>'只在首页展示，支持Html代码，比如[a]链接',
+//     'id'=>'site_notices',
+//     'std'=>'输入您的网站公告...',
+//     'type'=>"textarea"
+// );
 $options[] = array(
 	'name'=>'关于本站描述',
     'desc'=>'网站底部关于本站的描述',
     'id'=>'foot_about',
-    'std'=>'WebLiu-前端刘（webliu.com），记录前端刘在学习、工作中的代码问题。',
+    'std'=>'WebLiu-前端刘（webliu.net），记录前端刘在学习、工作中的代码问题。',
     'type'=>"textarea"
 );
 $options[] = array(
@@ -131,7 +131,7 @@ $options[] = array(
 	'name'=>'网站底部信息',
     'desc'=>'包含网站备案号、版权、站点地图等。站点地图请新建页面，选择"站点地图"模板',
     'id'=>'foot_seo',
-    'std'=>'© 2018 All Rights Reserved | Theme by <a target="_blank" href="http://webliu.com" title="WebLiu-前端刘">webliu.com</a> | 沪ICP备14045138号-1 | <a href="#">站点地图</a><a href="#" title="阿里云"><i class="fa fa-cloud"></i></a><a href="#" title="wordpress"><i class="fa fa-wordpress"></i></a>',
+    'std'=>'© 2018 All Rights Reserved | Theme by <a target="_blank" href="http://webliu.net" title="WebLiu-前端刘">webliu.net</a> | 沪ICP备14045138号-1 | <a href="#">站点地图</a><a href="#" title="阿里云"><i class="fa fa-cloud"></i></a><a href="#" title="wordpress"><i class="fa fa-wordpress"></i></a>',
     'type'=>"textarea"
 );
 $options[] = array(
@@ -181,7 +181,7 @@ $options[] = array(
     'name'=>'描述2',
     'desc'=>'同上',
     'id'=>'zbword2',
-    'std'=>'请Email Me：HiWebLiu@163.com',
+    'std'=>'Email Me：HiWebLiu@163.com',
     'type'=>"text"
 );
 $options[] = array(
@@ -195,7 +195,7 @@ $options[] = array(
     'name'=>'焦点图按钮',
     'desc'=>'默认2个按钮，若想再添加按钮复制代码即可，图标请自行百度Font Awesome',
     'id'=>'visualbts',
-    'std'=>'<a href="http://www.webliu.net" type="button"><i class="fa fa-cloud-download"></i>下载本主题</a>
+    'std'=>'<a href="https://github.com/hiwebliu/WebLiu" type="button" title="下载webliu主题"><i class="fa fa-cloud-download"></i>下载本主题</a>
 <a href="http://www.webliu.net/aboutme" type="button"><i class="fa fa-street-view"></i>关于前端刘</a>',
     'type'=>"textarea"
 );
@@ -423,7 +423,7 @@ $options[] = array(
     'type'=>"color"
 );
 $options[] = array(
-    'desc'=>'按钮链接',
+    'desc'=>'按钮链接(在线qq聊天请到官网自行设置[http://shang.qq.com])',
     'id'=>'sloganlink',
     'std'=>'http://www.webliu.net',
     'type'=>"text"
@@ -634,7 +634,7 @@ $options[] = array(
     'name'=>'站长头像',
     'desc'=>'图片用于：1.首页大图头像;2.侧边栏站长头像;3.关于站长页面',
     'id'=>'social_img',
-    'std'=>''.get_template_directory_uri().'/img/slides/tx.png',
+    'std'=>''.get_template_directory_uri().'/img/tx.png',
     'type'=>"upload"
 );
 $options[] = array(

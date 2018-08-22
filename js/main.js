@@ -59,6 +59,8 @@ var setCourseHeight = function() {
 	}
 };
 
+
+// 页面初始化
 $(function(){
 	$('.wow').removeClass('showlater');
 	$('.wow').css('display','block');
@@ -124,4 +126,6 @@ $(function(){
 	$('#al_expand_collapse').click(function(){
 		$('#archives .al_post_list').hide(500);
 	});
+
+	$('.showme_btns a').attr("target","_blank");
 });

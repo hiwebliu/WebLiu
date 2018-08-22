@@ -27,7 +27,7 @@
 			</section>
 			<section class="search_show">
 				<a href="javascript:;" class="">
-					<i class="iconfont icon-search" data-toggle="tooltip" title="搜索"></i>
+					<i class="iconfont icon-search" title="搜索"></i>
 				</a>
 			</section>
 			<section class="site_nav">
