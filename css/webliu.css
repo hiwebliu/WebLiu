@@ -440,9 +440,9 @@ blockquote {
 /*视觉差背景*/
 .visual {
     background-image: url(../img/visualbg.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
     position: relative;
     display: table;
     overflow:hidden;
